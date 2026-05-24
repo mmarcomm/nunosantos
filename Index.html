@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Sistema Editorial — 40 Publicações · IG + FB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a17;
+    --paper:#f3eee5;
+    --paper-2:#ebe4d3;
+    --yellow:#f0c419;
+    --yellow-2:#e8b510;
+    --green:#2f3a2c;
+    --green-2:#475940;
+    --rule:#d5cdb8;
+    --muted:#6e6856;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  body{
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(240,196,25,0.04), transparent 50%),
+      radial-gradient(circle at 80% 100%, rgba(47,58,44,0.05), transparent 50%);
+    background-attachment:fixed;
+  }
+  .grain{
+    pointer-events:none;
+    position:fixed;inset:0;
+    z-index:100;
+    opacity:0.035;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .page{max-width:1440px;margin:0 auto;padding:48px 56px 96px;position:relative}
+
+  /* MASTHEAD */
+  .masthead{
+    border-top:2px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:14px 0;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    gap:32px;
+    align-items:center;
+    font-size:10.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .masthead .left{text-align:left}
+  .masthead .center{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:13px;
+    letter-spacing:0.18em;
+    text-transform:none;
+  }
+  .masthead .right{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+
+  /* HERO */
+  .hero{
+    padding:80px 0 64px;
+    display:grid;
+    grid-template-columns:7fr 5fr;
+    gap:80px;
+    border-bottom:1px solid var(--ink);
+    position:relative;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;
+    font-variation-settings:'opsz' 144,'SOFT' 50;
+    font-weight:340;
+    font-size:clamp(64px,8.2vw,128px);
+    line-height:0.9;
+    letter-spacing:-0.035em;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:300;
+    color:var(--green);
+  }
+  .hero h1 .amp{
+    font-style:italic;
+    color:var(--yellow);
+    font-weight:300;
+  }
+  .hero .lede{
+    align-self:end;
+  }
+  .hero .lede p{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    line-height:1.4;
+    max-width:34ch;
+    font-weight:400;
+  }
+  .hero .lede p em{font-style:italic;color:var(--muted)}
+  .hero .lede .stamp{
+    margin-top:24px;
+    display:inline-grid;
+    grid-template-columns:auto 1fr;
+    gap:14px;
+    align-items:center;
+    padding:8px 14px 8px 8px;
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .hero .lede .stamp .v{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:18px;
+    background:var(--yellow);
+    color:var(--ink);
+    padding:2px 10px;
+  }
+  .hero .lede .stamp .t{
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+
+  /* SECTION HEAD */
+  .section-head{
+    padding:72px 0 28px;
+    display:grid;
+    grid-template-columns:88px 1fr auto;
+    gap:24px;
+    align-items:baseline;
+    border-bottom:1.5px solid var(--ink);
+  }
+  .section-head .num{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:38px;
+    color:var(--yellow-2);
+    letter-spacing:-0.02em;
+  }
+  .section-head .title{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:30px;
+    letter-spacing:-0.015em;
+  }
+  .section-head .title em{font-style:italic;color:var(--green)}
+  .section-head .meta{
+    font-size:10px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+
+  /* TEMPLATE GRID */
+  .templates{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:36px 32px;
+    padding:40px 0 0;
+  }
+  .template-card{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .template-label{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:12px;
+    align-items:center;
+  }
+  .template-label .id{
+    background:var(--ink);
+    color:var(--paper);
+    padding:4px 8px;
+    font-size:9.5px;
+    letter-spacing:0.18em;
+    font-weight:600;
+  }
+  .template-label .name{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .template-label .cat{
+    font-size:9.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .template-label .cat::before{
+    content:'';
+    width:8px;height:8px;
+    border-radius:50%;
+    border:1px solid var(--ink);
+  }
+  .template-label .cat.y::before{background:var(--yellow)}
+  .template-label .cat.g::before{background:var(--green)}
+  .template-label .cat.k::before{background:var(--ink)}
+  .template-label .cat.p::before{background:var(--paper)}
+
+  .post{
+    aspect-ratio:1/1;
+    background:var(--paper-2);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 1px 0 rgba(26,26,23,0.08), 0 20px 40px -20px rgba(26,26,23,0.15);
+  }
+
+  /* M01 — Capa de projeto */
+  .t-cover{
+    background:var(--ink);
+    color:var(--paper);
+    display:grid;
+    grid-template-rows:1fr auto;
+  }
+  .t-cover .hero-img{
+    position:relative;
+    background:linear-gradient(160deg,#5a6b4a 0%,#3d4a32 50%,#1e2419 100%);
+    overflow:hidden;
+  }
+  .t-cover .hero-img::after{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 25% 35%, rgba(240,196,25,0.18), transparent 55%),
+      radial-gradient(circle at 75% 80%, rgba(255,255,255,0.06), transparent 40%);
+  }
+  .t-cover .leaves{
+    position:absolute;
+    bottom:-8%;right:-12%;
+    width:75%;height:auto;
+    opacity:0.55;
+    color:var(--ink);
+  }
+  .t-cover .thumbs{
+    position:absolute;
+    top:12px;right:12px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    z-index:2;
+  }
+  .t-cover .thumbs .th{
+    width:44px;height:44px;
+    background:var(--paper);
+    border:1px solid rgba(0,0,0,0.1);
+    overflow:hidden;
+    position:relative;
+  }
+  .t-cover .thumbs .th:nth-child(1){background:linear-gradient(135deg,#6b7a55,#3d4a32)}
+  .t-cover .thumbs .th:nth-child(2){background:linear-gradient(135deg,#8a7a55,#5a4a2a)}
+  .t-cover .corner-mark{
+    position:absolute;
+    top:12px;left:12px;
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--paper);
+    font-weight:500;
+    z-index:2;
+  }
+  .t-cover .corner-mark .dot{
+    display:inline-block;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--yellow);
+    margin-right:6px;
+    transform:translateY(-1px);
+  }
+  .t-cover .meta-strip{
+    padding:14px 16px 14px;
+    background:var(--paper);
+    color:var(--ink);
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:12px;
+    align-items:end;
+    border-top:2px solid var(--yellow);
+  }
+  .t-cover .meta-strip h2{
+    font-family:'Fraunces',serif;
+    font-weight:350;
+    font-size:24px;
+    line-height:0.95;
+    letter-spacing:-0.022em;
+  }
+  .t-cover .meta-strip h2 em{font-style:italic;color:var(--green)}
+  .t-cover .meta-strip .loc{
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:6px;
+    font-weight:500;
+  }
+  .t-cover .meta-strip .arrow{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:30px;
+    line-height:1;
+    color:var(--yellow-2);
+  }
+
+  /* M02 — Cuidados */
+  .t-care{
+    background:var(--yellow);
+    display:grid;
+    grid-template-rows:auto 1fr;
+    padding:16px 16px 14px;
+  }
+  .t-care header{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:end;
+    padding-bottom:8px;
+    border-bottom:1.5px solid var(--ink);
+  }
+  .t-care header h3{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:24px;
+    letter-spacing:-0.015em;
+    line-height:1;
+  }
+  .t-care header .nr{
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+    font-variant-numeric:tabular-nums;
+  }
+  .t-care .body{
+    padding-top:12px;
+    display:grid;
+    grid-template-rows:1fr auto;
+    gap:10px;
+    min-height:0;
+  }
+  .t-care .img{
+    background:linear-gradient(150deg,#4a5a3e,#1e2419);
+    position:relative;
+    overflow:hidden;
+  }
+  .t-care .img::after{
+    content:'';
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse at 65% 45%, rgba(240,196,25,0.18), transparent 60%);
+  }
+  .t-care .img svg{
+    position:absolute;
+    bottom:-5%;left:50%;
+    transform:translateX(-50%);
+    width:80%;
+    opacity:0.4;
+    color:var(--ink);
+  }
+  .t-care .caption{
+    font-family:'Fraunces',serif;
+    font-size:11.5px;
+    line-height:1.35;
+    font-weight:400;
+  }
+  .t-care .caption strong{font-weight:600}
+
+  /* M03 — Plant ID */
+  .t-id{
+    background:var(--paper);
+    display:grid;
+    grid-template-rows:1fr auto;
+  }
+  .t-id .img{
+    background:linear-gradient(165deg,#7a8a5a 0%,#3d4a32 100%);
+    position:relative;
+    overflow:hidden;
+  }
+  .t-id .img::after{
+    content:'';
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 55%, rgba(240,196,25,0.15), transparent 55%);
+  }
+  .t-id .img svg{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:55%;
+    opacity:0.85;
+    color:var(--paper);
+  }
+  .t-id .img .scale{
+    position:absolute;
+    bottom:10px;left:10px;
+    font-size:8px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--paper);
+    opacity:0.7;
+    font-weight:500;
+  }
+  .t-id .info{
+    padding:13px 14px 14px;
+    border-top:1.5px solid var(--ink);
+    background:var(--paper);
+  }
+  .t-id .info .row1{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:baseline;
+    gap:10px;
+  }
+  .t-id .info h3{
+    font-family:'Fraunces',serif;
+    font-weight:380;
+    font-size:22px;
+    line-height:1;
+    letter-spacing:-0.015em;
+  }
+  .t-id .info .num{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .t-id .info .latin{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .t-id .info .tags{
+    display:flex;
+    gap:5px;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .t-id .info .tag{
+    font-size:8px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border:1px solid var(--ink);
+    border-radius:100px;
+    font-weight:500;
+  }
+
+  /* M04 — Potted Plants */
+  .t-house{
+    background:var(--paper);
+    display:grid;
+    grid-template-columns:1fr 36px;
+    padding:16px;
+    gap:14px;
+    position:relative;
+  }
+  .t-house::before{
+    content:'';
+    position:absolute;
+    left:16px;right:16px;
+    top:50px;
+    height:1px;
+    background:var(--ink);
+  }
+  .t-house .left{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .t-house .left .eyebrow{
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .t-house .left .eyebrow svg{width:14px;height:14px}
+  .t-house .left h3{
+    font-family:'Fraunces',serif;
+    font-weight:350;
+    font-size:30px;
+    line-height:0.95;
+    margin-top:16px;
+    letter-spacing:-0.025em;
+  }
+  .t-house .left h3 em{font-style:italic;color:var(--green)}
+  .t-house .left .illust{
+    flex:1;
+    margin-top:12px;
+    background:var(--paper-2);
+    position:relative;
+    border:1px solid var(--ink);
+    overflow:hidden;
+  }
+  .t-house .left .illust svg{
+    position:absolute;
+    bottom:0;left:50%;
+    transform:translateX(-50%);
+    height:90%;
+    width:auto;
+    color:var(--ink);
+  }
+  .t-house .left .illust .tag{
+    position:absolute;
+    top:8px;left:8px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:10px;
+    color:var(--muted);
+  }
+  .t-house .icons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    padding-top:46px;
+    align-items:center;
+  }
+  .t-house .icons svg{
+    width:20px;height:20px;
+    color:var(--ink);
+  }
+
+  /* M05 — Processo */
+  .t-process{
+    background:var(--ink);
+    color:var(--paper);
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    padding:16px;
+    gap:12px;
+  }
+  .t-process header{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:baseline;
+    gap:12px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(243,238,229,0.25);
+  }
+  .t-process header h3{
+    font-family:'Fraunces',serif;
+    font-weight:350;
+    font-size:22px;
+    line-height:1;
+    letter-spacing:-0.018em;
+  }
+  .t-process header h3 em{font-style:italic;color:var(--yellow)}
+  .t-process header .nr{
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--paper);
+    opacity:0.6;
+    font-weight:500;
+    font-variant-numeric:tabular-nums;
+  }
+  .t-process .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    min-height:0;
+  }
+  .t-process .grid .cell{
+    background:var(--paper-2);
+    position:relative;
+    overflow:hidden;
+  }
+  .t-process .grid .cell.a{background:linear-gradient(135deg,#7a6a4a,#3a2f22)}
+  .t-process .grid .cell.b{background:linear-gradient(135deg,#5a6b4a,#3d4a32)}
+  .t-process .grid .cell.c{background:linear-gradient(135deg,#7a8a5a,#4a5a3e)}
+  .t-process .grid .cell::after{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 60%, rgba(240,196,25,0.12), transparent 60%);
+  }
+  .t-process .stages{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .t-process .stages span{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:6px;
+    align-items:center;
+  }
+  .t-process .stages span::before{
+    content:attr(data-i);
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:14px;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--yellow);
+  }
+
+  /* M06 — Quote */
+  .t-quote{
+    background:var(--yellow);
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    padding:18px 20px 16px;
+    position:relative;
+  }
+  .t-quote .top{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:10px;
+    align-items:center;
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .t-quote .top::after{
+    content:'';
+    height:1px;
+    background:var(--ink);
+    width:100%;
+  }
+  .t-quote blockquote{
+    font-family:'Fraunces',serif;
+    font-weight:340;
+    font-size:30px;
+    line-height:1.05;
+    letter-spacing:-0.025em;
+    align-self:center;
+    padding:8px 0;
+    position:relative;
+  }
+  .t-quote blockquote .open{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:70px;
+    line-height:0;
+    display:block;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  .t-quote blockquote em{font-style:italic;color:var(--green)}
+  .t-quote .credit{
+    font-size:8.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    border-top:1px solid var(--ink);
+    padding-top:10px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    font-weight:500;
+  }
+  .t-quote .credit em{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:11px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+
+  /* CATEGORIES */
+  .categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    padding:0;
+    margin-top:32px;
+    border:1px solid var(--ink);
+  }
+  .cat-cell{
+    padding:24px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    border-right:1px solid var(--ink);
+  }
+  .cat-cell:last-child{border-right:none}
+  .cat-cell .dot{
+    width:32px;height:32px;
+    border-radius:50%;
+    border:1.5px solid var(--ink);
+  }
+  .cat-cell.y .dot{background:var(--yellow)}
+  .cat-cell.k .dot{background:var(--ink)}
+  .cat-cell.g .dot{background:var(--green)}
+  .cat-cell.p .dot{background:var(--paper)}
+  .cat-cell h4{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:-0.015em;
+  }
+  .cat-cell h4 em{font-style:italic;color:var(--muted);font-weight:300}
+  .cat-cell p{
+    font-size:11px;
+    line-height:1.45;
+    color:var(--muted);
+    max-width:24ch;
+  }
+  .cat-cell .count{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--ink);
+    margin-top:auto;
+  }
+  .cat-cell .count::after{
+    content:'';
+    display:block;
+    width:24px;
+    height:1px;
+    background:var(--ink);
+    margin-top:6px;
+  }
+
+  /* ICONS */
+  .icon-row{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:0;
+    margin-top:40px;
+    border:1px solid var(--ink);
+  }
+  .icon-cell{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    padding:28px 12px 22px;
+    border-right:1px solid var(--ink);
+    background:var(--paper);
+    position:relative;
+  }
+  .icon-cell:last-child{border-right:none}
+  .icon-cell svg{
+    width:40px;height:40px;
+    color:var(--ink);
+  }
+  .icon-cell .pt{
+    position:absolute;
+    top:8px;left:10px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--muted);
+  }
+  .icon-cell .label{
+    font-size:9px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .icon-cell .pt-label{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:-8px;
+  }
+
+  /* TYPE & COLOR */
+  .type-color{
+    display:grid;
+    grid-template-columns:1.6fr 1fr;
+    gap:56px;
+    padding:40px 0 0;
+  }
+  .type-spec h4{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:10px;
+    font-weight:400;
+  }
+  .type-spec .display{
+    font-family:'Fraunces',serif;
+    font-size:108px;
+    font-weight:350;
+    line-height:0.85;
+    letter-spacing:-0.035em;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+  .type-spec .display em{font-style:italic;color:var(--green)}
+  .type-spec .display .y{color:var(--yellow-2)}
+  .type-spec .meta-line{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:24px;
+    padding:10px 0 0;
+    font-size:9.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+  .type-spec .meta-line span strong{color:var(--ink);font-weight:600}
+  .type-spec .body-sample{
+    margin-top:32px;
+    padding-top:24px;
+    border-top:1px solid var(--rule);
+  }
+  .type-spec .body-sample p{
+    font-family:'Archivo',sans-serif;
+    font-size:14px;
+    line-height:1.6;
+    max-width:54ch;
+    font-weight:400;
+  }
+  .type-spec .body-sample p strong{font-weight:600}
+  .type-spec .body-sample .ml{
+    margin-top:14px;
+    font-size:9.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+
+  .swatches{
+    display:flex;
+    flex-direction:column;
+  }
+  .swatch{
+    display:grid;
+    grid-template-columns:64px 1fr auto;
+    gap:18px;
+    align-items:center;
+    padding:14px 0;
+    border-top:1px solid var(--rule);
+  }
+  .swatch:last-child{border-bottom:1px solid var(--rule)}
+  .swatch .chip{
+    width:64px;height:64px;
+    border:1px solid var(--ink);
+  }
+  .swatch .name{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:18px;
+    letter-spacing:-0.01em;
+  }
+  .swatch .name em{font-style:italic;color:var(--muted);font-weight:300;font-size:11px;letter-spacing:0;display:block;margin-top:2px}
+  .swatch .hex{
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    font-variant-numeric:tabular-nums;
+    color:var(--muted);
+    text-align:right;
+    font-weight:500;
+  }
+  .swatch .hex span{display:block;color:var(--ink);margin-top:3px;font-size:9.5px}
+
+  /* MATRIX */
+  .matrix-wrap{margin-top:40px}
+  .matrix{
+    display:grid;
+    grid-template-columns:140px repeat(4,1fr);
+    border:1px solid var(--ink);
+    background:var(--paper);
+  }
+  .matrix .cell{
+    padding:14px 12px;
+    border-right:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    font-size:11px;
+    line-height:1.4;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    min-height:74px;
+  }
+  .matrix .cell:nth-child(5n){border-right:none}
+  .matrix .head{
+    background:var(--ink);
+    color:var(--paper);
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:500;
+    padding:12px;
+    border-right:1px solid rgba(243,238,229,0.15);
+    border-bottom:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .matrix .head .d{
+    width:9px;height:9px;
+    border-radius:50%;
+    border:1px solid var(--paper);
+  }
+  .matrix .head.y .d{background:var(--yellow)}
+  .matrix .head.k .d{background:var(--paper)}
+  .matrix .head.g .d{background:var(--green)}
+  .matrix .head.p .d{background:var(--paper);border-color:var(--paper)}
+  .matrix .rowlabel{
+    background:var(--paper-2);
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--ink);
+    font-weight:400;
+    border-right:1px solid var(--ink);
+  }
+  .matrix .rowlabel small{
+    display:block;
+    font-family:'Archivo',sans-serif;
+    font-style:normal;
+    font-size:8.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:2px;
+    font-weight:500;
+  }
+  .matrix .cell strong{
+    font-weight:600;
+    font-size:11px;
+  }
+  .matrix .cell em{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:11px;
+  }
+  .matrix-foot{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:end;
+    gap:24px;
+  }
+  .matrix-foot p{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--muted);
+    max-width:55ch;
+  }
+  .matrix-foot .total{
+    font-family:'Fraunces',serif;
+    font-size:48px;
+    font-weight:350;
+    line-height:1;
+    letter-spacing:-0.025em;
+  }
+  .matrix-foot .total em{font-style:italic;color:var(--yellow-2)}
+  .matrix-foot .total small{
+    display:block;
+    font-family:'Archivo',sans-serif;
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:6px;
+    font-weight:500;
+  }
+
+  /* COLOPHON */
+  .colophon{
+    margin-top:80px;
+    padding:24px 0 0;
+    border-top:2px solid var(--ink);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:32px;
+  }
+  .colophon .col h5{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:10px;
+    font-weight:400;
+  }
+  .colophon .col p{
+    font-size:11.5px;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .colophon .col p strong{font-weight:600}
+  .colophon .sign{
+    margin-top:48px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    grid-column:1/-1;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:baseline;
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+  .colophon .sign em{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:0;
+    text-transform:none;
+    color:var(--ink);
+    font-weight:400;
+  }
+
+  @media (max-width:1024px){
+    .page{padding:32px 28px 64px}
+    .hero{grid-template-columns:1fr;gap:32px;padding:48px 0}
+    .templates{grid-template-columns:repeat(2,1fr)}
+    .type-color{grid-template-columns:1fr;gap:48px}
+    .matrix{grid-template-columns:120px repeat(4,1fr);font-size:10px}
+    .colophon{grid-template-columns:repeat(2,1fr)}
+    .icon-row{grid-template-columns:repeat(3,1fr)}
+    .icon-cell:nth-child(3n){border-right:none}
+    .categories{grid-template-columns:repeat(2,1fr)}
+    .cat-cell:nth-child(2n){border-right:none}
+    .cat-cell:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+  }
+  @media (max-width:640px){
+    .page{padding:24px 20px 48px}
+    .templates{grid-template-columns:1fr}
+    .matrix{grid-template-columns:100px repeat(4,1fr);font-size:9.5px}
+    .matrix .cell{padding:10px 8px;min-height:64px}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="left">N.S — Paisagismo · Algarve</div>
+    <div class="center">Sistema editorial para redes sociais</div>
+    <div class="right">v0.1 / 05.2026</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Um sistema<br>para <em>quarenta</em><br>publica&ccedil;&otilde;es.</h1>
+    <div class="lede">
+      <p>Seis modelos editoriais, uma malha modular, uma fam&iacute;lia de &iacute;cones e quatro categorias. <em>Produzido em s&eacute;rie, variado sem perder a unidade.</em></p>
+      <div class="stamp">
+        <span class="v">v0.1</span>
+        <span class="t">Brief · Maio 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01: TEMPLATES -->
+  <div class="section-head">
+    <div class="num">01</div>
+    <div class="title">Os seis <em>modelos</em></div>
+    <div class="meta">Formato 1:1 — 1080 × 1080 px</div>
+  </div>
+
+  <div class="templates">
+
+    <!-- M01 — CAPA DE PROJETO -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M01</span>
+        <span class="name">Capa de projeto</span>
+        <span class="cat y">Projetos</span>
+      </div>
+      <div class="post t-cover">
+        <div class="hero-img">
+          <div class="corner-mark"><span class="dot"></span>Projeto N.&ordm; 27</div>
+          <div class="thumbs">
+            <div class="th"></div>
+            <div class="th"></div>
+          </div>
+          <svg class="leaves" viewBox="0 0 200 200" fill="currentColor">
+            <path d="M100 180 Q90 140 70 110 Q55 90 40 75 Q60 80 80 95 Q95 105 100 120 L100 180 Z" opacity="0.6"/>
+            <path d="M100 180 Q110 130 130 100 Q145 80 165 65 Q150 90 135 115 Q120 135 110 160 L100 180 Z" opacity="0.5"/>
+            <path d="M100 180 Q100 145 100 110 Q100 80 105 50 Q108 80 108 115 Q108 150 105 180 L100 180 Z" opacity="0.55"/>
+          </svg>
+        </div>
+        <div class="meta-strip">
+          <div>
+            <h2>Quinta da <em>Boa Vista</em></h2>
+            <div class="loc">Tavira · Verão de 2025</div>
+          </div>
+          <div class="arrow">&rarr;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M02 — CUIDADOS -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M02</span>
+        <span class="name">Cuidados sazonais</span>
+        <span class="cat p">Cuidados</span>
+      </div>
+      <div class="post t-care">
+        <header>
+          <h3>Cuidados</h3>
+          <span class="nr">N.&ordm; 14 / Verão</span>
+        </header>
+        <div class="body">
+          <div class="img">
+            <svg viewBox="0 0 200 100" fill="currentColor">
+              <path d="M20 95 Q30 60 45 50 Q55 70 50 95 Z M55 95 Q70 40 90 35 Q100 65 90 95 Z M100 95 Q115 30 140 28 Q150 60 140 95 Z M150 95 Q165 50 180 45 Q188 70 180 95 Z"/>
+            </svg>
+          </div>
+          <div class="caption"><strong>Rega ao amanhecer.</strong> Sombra parcial at&eacute; &agrave;s 16h. Mulch grosso para reter humidade.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M03 — PLANT ID -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M03</span>
+        <span class="name">Ficha de planta</span>
+        <span class="cat g">Bastidores</span>
+      </div>
+      <div class="post t-id">
+        <div class="img">
+          <svg viewBox="0 0 100 100" fill="currentColor" stroke="currentColor" stroke-width="0.5">
+            <path d="M50 90 L50 50 M50 65 Q35 55 25 40 Q40 45 50 60 M50 55 Q65 45 78 32 Q70 50 50 60 M50 75 Q38 70 28 60 Q38 68 50 78 M50 70 Q62 65 72 55 Q62 70 50 78" fill="none" stroke-width="1.2"/>
+            <ellipse cx="32" cy="42" rx="9" ry="4" transform="rotate(-30 32 42)" opacity="0.85"/>
+            <ellipse cx="68" cy="38" rx="11" ry="4" transform="rotate(25 68 38)" opacity="0.85"/>
+            <ellipse cx="30" cy="62" rx="8" ry="3.5" transform="rotate(-20 30 62)" opacity="0.85"/>
+            <ellipse cx="70" cy="60" rx="9" ry="3.5" transform="rotate(20 70 60)" opacity="0.85"/>
+          </svg>
+          <div class="scale">Esc. 1:8</div>
+        </div>
+        <div class="info">
+          <div class="row1">
+            <h3>Oliveira</h3>
+            <span class="num">N.&ordm; 03</span>
+          </div>
+          <div class="latin">Olea europaea</div>
+          <div class="tags">
+            <span class="tag">Sol pleno</span>
+            <span class="tag">Rega baixa</span>
+            <span class="tag">Perene</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M04 — HOUSE PLANT -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M04</span>
+        <span class="name">Plantas de interior</span>
+        <span class="cat p">Cuidados</span>
+      </div>
+      <div class="post t-house">
+        <div class="left">
+          <span class="eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21h12l-1-9H7l-1 9zM6 12h12M9 12V9a3 3 0 0 1 6 0v3"/></svg>
+            Vaso N.&ordm; 03
+          </span>
+          <h3>Potted<br><em>Plants</em></h3>
+          <div class="illust">
+            <span class="tag">il. cient&iacute;fica</span>
+            <svg viewBox="0 0 100 100" fill="currentColor">
+              <path d="M40 100 L40 75 L60 75 L60 100 Z" opacity="0.85"/>
+              <path d="M38 75 L62 75 L60 70 L40 70 Z" opacity="0.9"/>
+              <path d="M50 70 L50 35" stroke="currentColor" stroke-width="1" fill="none"/>
+              <ellipse cx="38" cy="50" rx="11" ry="4" transform="rotate(-30 38 50)" opacity="0.85"/>
+              <ellipse cx="62" cy="45" rx="13" ry="4" transform="rotate(25 62 45)" opacity="0.85"/>
+              <ellipse cx="35" cy="38" rx="9" ry="3" transform="rotate(-25 35 38)" opacity="0.85"/>
+              <ellipse cx="65" cy="33" rx="10" ry="3" transform="rotate(20 65 33)" opacity="0.85"/>
+              <ellipse cx="50" cy="28" rx="7" ry="2.5" opacity="0.85"/>
+            </svg>
+          </div>
+        </div>
+        <div class="icons">
+          <!-- Sun -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <!-- Water -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c0 0-6 7-6 11.5a6 6 0 0 0 12 0c0-4.5-6-11.5-6-11.5z"/></svg>
+          <!-- Soil/shovel -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18l1-4h12l1 4M8 14l2-4h4l2 4M11 10V5h2v5"/></svg>
+          <!-- Pot -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12l-1.5 11h-9L6 9zM5 9h14M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <!-- Pet -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9" r="2"/><circle cx="17" cy="9" r="2"/><circle cx="5" cy="14" r="1.5"/><circle cx="19" cy="14" r="1.5"/><path d="M12 13c-3 0-5 3-5 5s2 3 5 3 5-1 5-3-2-5-5-5z"/></svg>
+          <!-- Thermometer -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4a2 2 0 1 1 4 0v10.5a4 4 0 1 1-4 0V4z"/><circle cx="12" cy="17" r="1.5" fill="currentColor"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- M05 — PROCESSO -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M05</span>
+        <span class="name">Antes · Meio · Depois</span>
+        <span class="cat y">Projetos</span>
+      </div>
+      <div class="post t-process">
+        <header>
+          <h3>O <em>processo</em>,<br>em três tempos.</h3>
+          <span class="nr">N.&ordm; 09</span>
+        </header>
+        <div class="grid">
+          <div class="cell a"></div>
+          <div class="cell b"></div>
+          <div class="cell c"></div>
+        </div>
+        <div class="stages">
+          <span data-i="I">Início</span>
+          <span data-i="II">Meio</span>
+          <span data-i="III">Fim</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- M06 — CITAÇÃO -->
+    <div class="template-card">
+      <div class="template-label">
+        <span class="id">M06</span>
+        <span class="name">Citação tipográfica</span>
+        <span class="cat g">Bastidores</span>
+      </div>
+      <div class="post t-quote">
+        <div class="top">N.&ordm; 21</div>
+        <blockquote>
+          <span class="open">&ldquo;</span>
+          Sistema e <em>paci&ecirc;ncia</em> curam tudo.
+        </blockquote>
+        <div class="credit">
+          <span>Caderno de campo</span>
+          <em>— N.S</em>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 02: CATEGORIES -->
+  <div class="section-head">
+    <div class="num">02</div>
+    <div class="title">As quatro <em>categorias</em></div>
+    <div class="meta">Códigos de cor por publicação</div>
+  </div>
+
+  <div class="categories">
+    <div class="cat-cell y">
+      <div class="dot"></div>
+      <h4>Projetos</h4>
+      <p>Obras concluídas, capas, processos antes/depois.</p>
+      <div class="count">12 posts</div>
+    </div>
+    <div class="cat-cell k">
+      <div class="dot"></div>
+      <h4>Or&ccedil;amentos</h4>
+      <p>Convites &agrave; ac&ccedil;&atilde;o, FAQ, prazos, condi&ccedil;&otilde;es.</p>
+      <div class="count">6 posts</div>
+    </div>
+    <div class="cat-cell g">
+      <div class="dot"></div>
+      <h4>Bastidores</h4>
+      <p>Equipa, ferramentas, cita&ccedil;&otilde;es, dia-a-dia.</p>
+      <div class="count">10 posts</div>
+    </div>
+    <div class="cat-cell p">
+      <div class="dot"></div>
+      <h4>Cuidados</h4>
+      <p>Calend&aacute;rio sazonal, fichas de planta, rega, pragas.</p>
+      <div class="count">12 posts</div>
+    </div>
+  </div>
+
+  <!-- SECTION 03: ICONOGRAPHY -->
+  <div class="section-head">
+    <div class="num">03</div>
+    <div class="title">Iconografia <em>vegetal</em></div>
+    <div class="meta">6 símbolos · traçado 1.5pt</div>
+  </div>
+
+  <div class="icon-row">
+    <div class="icon-cell">
+      <span class="pt">01</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <span class="label">Sol</span>
+    </div>
+    <div class="icon-cell">
+      <span class="pt">02</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c0 0-6 7-6 11.5a6 6 0 0 0 12 0c0-4.5-6-11.5-6-11.5z"/></svg>
+      <span class="label">Rega</span>
+    </div>
+    <div class="icon-cell">
+      <span class="pt">03</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18l1-4h12l1 4M8 14l2-4h4l2 4M11 10V5h2v5"/></svg>
+      <span class="label">Solo</span>
+    </div>
+    <div class="icon-cell">
+      <span class="pt">04</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12l-1.5 11h-9L6 9zM5 9h14M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+      <span class="label">Vaso</span>
+    </div>
+    <div class="icon-cell">
+      <span class="pt">05</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9" r="2"/><circle cx="17" cy="9" r="2"/><circle cx="5" cy="14" r="1.5"/><circle cx="19" cy="14" r="1.5"/><path d="M12 13c-3 0-5 3-5 5s2 3 5 3 5-1 5-3-2-5-5-5z"/></svg>
+      <span class="label">Animais</span>
+    </div>
+    <div class="icon-cell">
+      <span class="pt">06</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4a2 2 0 1 1 4 0v10.5a4 4 0 1 1-4 0V4z"/><circle cx="12" cy="17" r="1.5" fill="currentColor"/></svg>
+      <span class="label">Clima</span>
+    </div>
+  </div>
+
+  <!-- SECTION 04: TYPE & COLOR -->
+  <div class="section-head">
+    <div class="num">04</div>
+    <div class="title">Tipo <em>&amp;</em> cor</div>
+    <div class="meta">Halyard Display (final) · Fraunces (web)</div>
+  </div>
+
+  <div class="type-color">
+    <div class="type-spec">
+      <h4>Display — títulos, citações</h4>
+      <div class="display">Aa <em>Bb</em> <span class="y">Cc</span></div>
+      <div class="meta-line">
+        <span><strong>Halyard Display</strong><br>Book / Italic</span>
+        <span><strong>opsz</strong> 144 · -3% tracking</span>
+        <span><strong>line-height</strong> 0.92</span>
+      </div>
+
+      <div class="body-sample">
+        <p><strong>A regra dos quatro toques.</strong> Cada publica&ccedil;&atilde;o tem, no m&aacute;ximo, quatro elementos hier&aacute;rquicos &mdash; eyebrow, t&iacute;tulo, corpo, assinatura. Tudo o resto &eacute; sil&ecirc;ncio. Esta restri&ccedil;&atilde;o &eacute; o que sustenta quarenta pe&ccedil;as sem cair na monotonia nem na cacofonia.</p>
+        <div class="ml"><strong>Archivo</strong> · 400 / 500 · 14 / 22</div>
+      </div>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="chip" style="background:#1a1a17"></div>
+        <div class="name">Tinta<em>Texto, fundos escuros</em></div>
+        <div class="hex">#1A1A17<span>CMYK 70 60 70 80</span></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#f0c419"></div>
+        <div class="name">A&ccedil;afr&atilde;o<em>Cor de marca · Projetos</em></div>
+        <div class="hex">#F0C419<span>CMYK 0 22 95 0</span></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#2f3a2c"></div>
+        <div class="name">Oliveira<em>Acento · Bastidores</em></div>
+        <div class="hex">#2F3A2C<span>CMYK 65 45 75 60</span></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#f3eee5"></div>
+        <div class="name">Papel<em>Fundo padr&atilde;o · Cuidados</em></div>
+        <div class="hex">#F3EEE5<span>CMYK 3 4 10 0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 05: MATRIX -->
+  <div class="section-head">
+    <div class="num">05</div>
+    <div class="title">A matriz das <em>40 publicações</em></div>
+    <div class="meta">Modelo × Categoria</div>
+  </div>
+
+  <div class="matrix-wrap">
+    <div class="matrix">
+      <div class="head" style="background:var(--ink)">Modelo</div>
+      <div class="head y"><span class="d"></span>Projetos</div>
+      <div class="head k"><span class="d"></span>Or&ccedil;amentos</div>
+      <div class="head g"><span class="d"></span>Bastidores</div>
+      <div class="head p"><span class="d"></span>Cuidados</div>
+
+      <div class="cell rowlabel">M01 Capa<small>Cover</small></div>
+      <div class="cell"><strong>×4</strong><em>capas de obra</em></div>
+      <div class="cell"><strong>×1</strong><em>capa de servi&ccedil;o</em></div>
+      <div class="cell"><strong>×1</strong><em>capa da equipa</em></div>
+      <div class="cell"><strong>×2</strong><em>capa sazonal</em></div>
+
+      <div class="cell rowlabel">M02 Cuidados<small>Care</small></div>
+      <div class="cell">&mdash;</div>
+      <div class="cell">&mdash;</div>
+      <div class="cell">&mdash;</div>
+      <div class="cell"><strong>×6</strong><em>dicas sazonais</em></div>
+
+      <div class="cell rowlabel">M03 Ficha<small>Plant ID</small></div>
+      <div class="cell"><strong>×2</strong><em>plantas do projeto</em></div>
+      <div class="cell">&mdash;</div>
+      <div class="cell"><strong>×3</strong><em>esp&eacute;cies favoritas</em></div>
+      <div class="cell"><strong>×2</strong><em>plantas perigosas</em></div>
+
+      <div class="cell rowlabel">M04 Interior<small>Indoor</small></div>
+      <div class="cell">&mdash;</div>
+      <div class="cell">&mdash;</div>
+      <div class="cell"><strong>×1</strong><em>casa da equipa</em></div>
+      <div class="cell"><strong>×2</strong><em>plantas de vaso</em></div>
+
+      <div class="cell rowlabel">M05 Processo<small>Before/After</small></div>
+      <div class="cell"><strong>×6</strong><em>obras em 3 tempos</em></div>
+      <div class="cell"><strong>×1</strong><em>processo de or&ccedil;am.</em></div>
+      <div class="cell"><strong>×2</strong><em>plantio passo-a-passo</em></div>
+      <div class="cell">&mdash;</div>
+
+      <div class="cell rowlabel" style="border-bottom:none">M06 Citação<small>Quote</small></div>
+      <div class="cell" style="border-bottom:none">&mdash;</div>
+      <div class="cell" style="border-bottom:none"><strong>×4</strong><em>convites a or&ccedil;ar</em></div>
+      <div class="cell" style="border-bottom:none"><strong>×4</strong><em>filosofia · m&aacute;ximas</em></div>
+      <div class="cell" style="border-bottom:none">&mdash;</div>
+    </div>
+
+    <div class="matrix-foot">
+      <p><em>6 modelos × 4 categorias, distribuídos em três meses de calendário editorial. Cada coluna pode crescer ou encolher sem alterar o sistema.</em></p>
+      <div class="total">40<small>Posts totais</small></div>
+    </div>
+  </div>
+
+  <!-- COLOPHON -->
+  <footer class="colophon">
+    <div class="col">
+      <h5>Sistema</h5>
+      <p>6 modelos. 4 categorias. <strong>40 publicações.</strong> Reaproveitáveis para Reels (1:1 → 4:5) e capas de Facebook.</p>
+    </div>
+    <div class="col">
+      <h5>Produção</h5>
+      <p>InDesign com <strong>páginas-mestre</strong> + Data Merge. CSV único alimenta todos os modelos em lote.</p>
+    </div>
+    <div class="col">
+      <h5>Exportação</h5>
+      <p>JPEG, sRGB, <strong>1080 × 1080 px</strong>. Qualidade máxima, sem perfil ICC embutido.</p>
+    </div>
+    <div class="col">
+      <h5>Tipografia</h5>
+      <p>Halyard Display Book/Italic (final). <strong>Fraunces</strong> como substituto web.</p>
+    </div>
+
+    <div class="sign">
+      <span>Sistema editorial · N.S Paisagismo · Algarve · v0.1</span>
+      <em>— Cloverprints, Maio 2026</em>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
