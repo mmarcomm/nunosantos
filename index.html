@@ -281,6 +281,36 @@
   .js .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
 
+  /* ============ COMPROMISSO / OBJETIVOS ============ */
+  .commit-intro{padding-top:36px;max-width:64ch}
+  .commit-intro p{font-family:'Fraunces',serif;font-size:clamp(20px,2.3vw,28px);line-height:1.3;font-weight:340;letter-spacing:-0.012em}
+  .commit-intro p em{font-style:italic;color:var(--green)}
+  .commit-intro .align{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .commit-intro .align::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--moss);flex:none}
+
+  .metas{margin-top:36px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .metas .stat .fig{color:var(--green)}
+
+  .goals{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--ink);border-top:none;margin-top:0}
+  .goal{padding:30px 28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;flex-direction:column;gap:14px;min-height:230px;transition:background .25s}
+  .goal:hover{background:var(--paper-2)}
+  .goal:nth-child(2n){border-right:none}
+  .goal:nth-child(n+3){border-bottom:none}
+  .goal .o{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:10px}
+  .goal .o b{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:16px;color:var(--moss);letter-spacing:0}
+  .goal h3{font-family:'Fraunces',serif;font-weight:400;font-size:25px;letter-spacing:-0.015em;line-height:1.05}
+  .goal h3 em{font-style:italic;color:var(--green)}
+  .goal p{font-size:13px;line-height:1.6;color:var(--muted);max-width:44ch}
+  .goal .chip{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:baseline;gap:9px;background:var(--paper-3);border:1px solid var(--rule);padding:8px 14px}
+  .goal:hover .chip{background:var(--paper)}
+  .goal .chip .mv{font-family:'Fraunces',serif;font-size:21px;font-weight:400;color:var(--ink);letter-spacing:-0.01em}
+  .goal .chip .ml{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+  .values{margin-top:34px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0}
+  .values .vlist{display:flex;gap:0;flex-wrap:wrap;font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,2.2vw,24px);color:var(--green)}
+  .values .vlist span:not(:last-child)::after{content:'·';margin:0 14px;color:var(--mist)}
+  .values .vnote{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right;max-width:32ch;line-height:1.5}
+
   /* ============ RESPONSIVE ============ */
   @media (max-width:1024px){
     .wrap,.nav-inner{padding:0 32px}
@@ -302,6 +332,8 @@
     .principle:nth-child(3){border-right:none}
     .principle:nth-child(-n+3){border-bottom:1px solid var(--ink)}
     .contact{grid-template-columns:1fr;gap:40px}
+    .values{grid-template-columns:1fr;gap:14px}
+    .values .vnote{text-align:left}
     .colophon{grid-template-columns:repeat(2,1fr)}
     /* mobile menu */
     .nav.open .nav-links{
@@ -318,9 +350,11 @@
     .wrap,.nav-inner{padding:0 20px}
     .sec-head{grid-template-columns:1fr;gap:8px;padding:64px 0 22px}
     .sec-head .meta{text-align:left}
-    .services{grid-template-columns:1fr}
+    .services,.goals{grid-template-columns:1fr}
     .svc{border-right:none!important;min-height:auto}
     .svc:not(:last-child){border-bottom:1px solid var(--ink)}
+    .goal{border-right:none!important;min-height:auto}
+    .goal:not(:last-child){border-bottom:1px solid var(--ink)!important}
     .grid-projects{grid-template-columns:1fr}
     .principles{grid-template-columns:repeat(2,1fr)}
     .principle:nth-child(2n){border-right:none}
@@ -348,6 +382,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#processo">Processo</a>
       <a href="#estudio">Estúdio</a>
+      <a href="#compromisso">Compromisso</a>
       <a href="#diario">Diário</a>
     </nav>
     <a class="nav-cta" href="#contacto">Pedir orçamento</a>
@@ -560,10 +595,66 @@
     </div>
   </section>
 
+  <!-- ============ COMPROMISSO / OBJETIVOS ============ -->
+  <section id="compromisso">
+    <div class="sec-head reveal">
+      <div class="num">05</div>
+      <div class="title">Os nossos <em>objetivos</em></div>
+      <div class="meta">Compromisso · transição verde</div>
+    </div>
+
+    <div class="commit-intro reveal">
+      <p>Um jardim no Algarve é, hoje, uma <em>decisão sobre água</em>. Por isso medimos o que fazemos: menos recursos, mais vida, valor que fica no território.</p>
+      <span class="align">Alinhado com a transição verde — Portugal 2030 · ODS 6, 12 e 15</span>
+    </div>
+
+    <!-- METAS / KPI -->
+    <div class="stats metas reveal" aria-label="Metas de impacto">
+      <div class="stat"><div class="fig">&minus;60<em>%</em></div><div class="lab">Água vs. relvado</div></div>
+      <div class="stat"><div class="fig">90<em>%</em></div><div class="lab">Resíduos valorizados</div></div>
+      <div class="stat"><div class="fig">100<em>%</em></div><div class="lab">Espécies adaptadas</div></div>
+      <div class="stat"><div class="fig">0</div><div class="lab">Herbicidas de síntese</div></div>
+    </div>
+
+    <!-- 4 OBJETIVOS -->
+    <div class="goals reveal">
+      <div class="goal">
+        <div class="o"><b>O1</b> Transição verde</div>
+        <h3>Jardins de <em>baixa rega</em></h3>
+        <p>Espécies autóctones e mediterrânicas, xerojardinagem e rega por gotejamento. Projetar para a água que o Algarve tem — não para a que falta.</p>
+        <span class="chip"><span class="mv">&minus;60%</span><span class="ml">consumo de água</span></span>
+      </div>
+      <div class="goal">
+        <div class="o"><b>O2</b> Economia circular</div>
+        <h3>Resíduos que <em>voltam ao solo</em></h3>
+        <p>Compostagem no local, reaproveitamento de podas como mulch e materiais de origem regional. O que sai do jardim regressa ao jardim.</p>
+        <span class="chip"><span class="mv">90%</span><span class="ml">resíduos verdes valorizados</span></span>
+      </div>
+      <div class="goal">
+        <div class="o"><b>O3</b> Emprego &amp; território</div>
+        <h3>Equipa <em>local e qualificada</em></h3>
+        <p>Formação contínua e postos de trabalho fixados no Algarve. Conhecimento que se mantém na região e cresce com cada obra — coesão territorial.</p>
+        <span class="chip"><span class="mv">100%</span><span class="ml">equipa do Algarve</span></span>
+      </div>
+      <div class="goal">
+        <div class="o"><b>O4</b> Inovação &amp; digital</div>
+        <h3>Rega <em>inteligente</em></h3>
+        <p>Sensores de humidade, programação por estação e gestão digital de projeto e manutenção. Tecnologia ao serviço de menos desperdício.</p>
+        <span class="chip"><span class="mv">24/7</span><span class="ml">monitorização de rega</span></span>
+      </div>
+    </div>
+
+    <!-- VALORES -->
+    <div class="values reveal">
+      <div class="vlist"><span>Integridade</span><span>Transparência</span><span>Confiança</span></div>
+      <div class="vnote">Os valores que guiam cada orçamento, obra e relação de longo prazo.</div>
+    </div>
+  </section>
+
   <!-- ============ DIÁRIO ============ -->
   <section id="diario">
     <div class="sec-head reveal">
-      <div class="num">05</div>
+      <div class="num">06</div>
       <div class="title">Do <em>caderno de campo</em></div>
       <div class="meta">Notas · cuidados · espécies</div>
     </div>
@@ -633,17 +724,18 @@
       <a class="lk" href="#servicos">Serviços</a>
       <a class="lk" href="#processo">Processo</a>
       <a class="lk" href="#estudio">Estúdio</a>
+      <a class="lk" href="#compromisso">Compromisso</a>
       <a class="lk" href="sistema.html">Sistema editorial</a>
     </div>
     <div class="col">
       <h5>Contacto</h5>
       <a class="lk" href="mailto:geral@nunosantos.info">geral@nunosantos.info</a>
-      <a class="lk" href="tel:+351000000000">+351 000 000 000</a>
+      <a class="lk" href="tel:+351938586285">+351 938 586 285</a>
       <p>nunosantos.info</p>
     </div>
     <div class="col">
-      <h5>Tipografia</h5>
-      <p>Fraunces (títulos) · Archivo (texto). Sistema cromático monocromático verde.</p>
+      <h5>Compromisso</h5>
+      <p>Práticas alinhadas com a transição verde do <strong>Portugal 2030</strong> e os Objetivos de Desenvolvimento Sustentável (ODS 6, 12 e 15).</p>
     </div>
     <div class="sign">
       <span>© 2026 Nuno Santos · Paisagismo · Algarve</span>
