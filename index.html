@@ -5,6 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuno Santos — Paisagismo · Algarve</title>
 <meta name="description" content="Estúdio de paisagismo no Algarve. Desenhamos, construímos e cuidamos de jardins mediterrânicos — pensados para o clima, a água que temos e para durar.">
+<meta name="theme-color" content="#16241b">
+<link rel="canonical" href="https://nunosantos.info/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316241b'/%3E%3Cpath d='M16 25V13M16 17c-4 0-6-3-6-7 4 0 6 3 6 7zM16 15c3 0-1-5 5-7 1 5-2 7-5 7z' fill='none' stroke='%236f9a64' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- Open Graph / redes sociais -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:site_name" content="Nuno Santos · Paisagismo">
+<meta property="og:title" content="Nuno Santos — Paisagismo · Algarve">
+<meta property="og:description" content="Jardins mediterrânicos no Algarve: desenho, construção, plantação e manutenção. Pensados para o clima e a água que temos.">
+<meta property="og:url" content="https://nunosantos.info/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nuno Santos — Paisagismo · Algarve">
+<meta name="twitter:description" content="Jardins mediterrânicos no Algarve: desenho, construção, plantação e manutenção.">
+<!-- Dados estruturados: negócio local (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LandscapingBusiness",
+  "name": "Nuno Santos — Paisagismo",
+  "description": "Estúdio de paisagismo no Algarve: desenho, construção, plantação e manutenção de jardins mediterrânicos de baixa rega.",
+  "url": "https://nunosantos.info/",
+  "email": "geral@nunosantos.info",
+  "telephone": "+351938586285",
+  "image": "https://nunosantos.info/",
+  "priceRange": "€€",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Algarve"},
+    {"@type": "City", "name": "Loulé"},
+    {"@type": "City", "name": "Tavira"},
+    {"@type": "City", "name": "Faro"},
+    {"@type": "City", "name": "Lagos"}
+  ],
+  "address": {"@type": "PostalAddress", "addressRegion": "Algarve", "addressCountry": "PT"},
+  "knowsLanguage": ["pt", "en"],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Desenho e projeto de jardins"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Construção de espaços exteriores"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plantação de espécies mediterrânicas"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manutenção de jardins"}}
+  ],
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Que zonas do Algarve servem?", "acceptedAnswer": {"@type": "Answer", "text": "Trabalhamos em todo o Algarve, com base nos concelhos de Loulé, Tavira, Faro e Lagos. Para obras fora desta área, avaliamos caso a caso."}},
+    {"@type": "Question", "name": "Como funciona o orçamento?", "acceptedAnswer": {"@type": "Answer", "text": "O primeiro contacto e a visita ao local são gratuitos. Depois preparamos uma proposta com plano, espécies e valores; só avançamos após aprovação."}},
+    {"@type": "Question", "name": "Fazem manutenção depois da obra?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, em contrato de manutenção mensal ou trimestral, para que o jardim melhore com os anos."}},
+    {"@type": "Question", "name": "Os jardins de baixa rega ficam verdes no verão?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Usamos espécies mediterrânicas adaptadas e rega por gotejamento eficiente, com uma fração da água de um relvado tradicional."}},
+    {"@type": "Question", "name": "Quanto tempo demora um projeto?", "acceptedAnswer": {"@type": "Answer", "text": "Um jardim residencial típico leva de 2 a 6 semanas entre projeto e construção. Indicamos sempre um calendário na proposta."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -311,6 +367,36 @@
   .values .vlist span:not(:last-child)::after{content:'·';margin:0 14px;color:var(--mist)}
   .values .vnote{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right;max-width:32ch;line-height:1.5}
 
+  /* ============ NAV ATIVO (scrollspy) ============ */
+  .nav-links a.active{color:var(--ink)}
+  .nav-links a.active::after{width:100%}
+
+  /* ============ DEPOIMENTOS ============ */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink);margin-top:40px}
+  .qt{padding:32px 28px;border-right:1px solid var(--ink);display:flex;flex-direction:column;gap:18px}
+  .qt:last-child{border-right:none}
+  .qt .stars{display:flex;gap:3px;color:var(--moss)}
+  .qt .stars svg{width:15px;height:15px}
+  .qt blockquote{font-family:'Fraunces',serif;font-weight:340;font-size:19px;line-height:1.32;letter-spacing:-0.012em;flex:1}
+  .qt blockquote em{font-style:italic;color:var(--green)}
+  .qt .by{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;border-top:1px solid var(--rule);padding-top:14px}
+  .qt .by b{color:var(--ink);font-weight:700}
+
+  /* ============ FAQ ============ */
+  .faq{margin-top:8px;border-top:1px solid var(--ink)}
+  .faq details{border-bottom:1px solid var(--rule)}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:24px 0;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
+    font-family:'Fraunces',serif;font-weight:400;font-size:clamp(19px,2.1vw,23px);letter-spacing:-0.012em;transition:color .2s;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--green)}
+  .faq summary .ic{font-family:'Archivo',sans-serif;font-size:22px;line-height:1;color:var(--moss);transition:transform .25s;font-weight:300}
+  .faq details[open] summary .ic{transform:rotate(45deg)}
+  .faq .ans{padding:0 0 26px;max-width:64ch}
+  .faq .ans p{font-size:14px;line-height:1.7;color:var(--muted)}
+  .faq .ans p strong{color:var(--ink);font-weight:600}
+
   /* ============ RESPONSIVE ============ */
   @media (max-width:1024px){
     .wrap,.nav-inner{padding:0 32px}
@@ -323,6 +409,9 @@
     .services{grid-template-columns:repeat(2,1fr)}
     .svc:nth-child(2){border-right:none}
     .svc:nth-child(-n+2){border-bottom:1px solid var(--ink)}
+    .quotes{grid-template-columns:1fr}
+    .qt{border-right:none}
+    .qt:not(:last-child){border-bottom:1px solid var(--ink)}
     .featured{grid-template-columns:1fr}
     .featured .img{min-height:300px}
     .grid-projects{grid-template-columns:repeat(2,1fr)}
@@ -651,10 +740,54 @@
     </div>
   </section>
 
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section id="depoimentos">
+    <div class="sec-head reveal">
+      <div class="num">06</div>
+      <div class="title">O que dizem os <em>clientes</em></div>
+      <div class="meta">Algarve · 2023 — 2025</div>
+    </div>
+    <div class="quotes reveal">
+      <figure class="qt">
+        <div class="stars" aria-label="5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>&ldquo;Transformaram um terreno seco num jardim que <em>quase não precisa de água</em>. Dois verões depois, está melhor do que no primeiro dia.&rdquo;</blockquote>
+        <figcaption class="by"><b>Maria L.</b> · Quinta em Tavira</figcaption>
+      </figure>
+      <figure class="qt">
+        <div class="stars" aria-label="5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>&ldquo;Profissionalismo do primeiro esboço à última poda. Explicaram <em>cada decisão</em> e cumpriram prazos e orçamento.&rdquo;</blockquote>
+        <figcaption class="by"><b>João P.</b> · Moradia em Loulé</figcaption>
+      </figure>
+      <figure class="qt">
+        <div class="stars" aria-label="5 estrelas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        </div>
+        <blockquote>&ldquo;A manutenção trimestral é impecável. O jardim mantém-se bonito o ano inteiro <em>sem nos preocuparmos</em>.&rdquo;</blockquote>
+        <figcaption class="by"><b>Sofia R.</b> · Terraço em Lagos</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- ============ DIÁRIO ============ -->
   <section id="diario">
     <div class="sec-head reveal">
-      <div class="num">06</div>
+      <div class="num">07</div>
       <div class="title">Do <em>caderno de campo</em></div>
       <div class="meta">Notas · cuidados · espécies</div>
     </div>
@@ -689,6 +822,37 @@
     </div>
     <div class="journal-foot reveal">
       <a href="sistema.html">Ver o sistema editorial completo →</a>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="sec-head reveal">
+      <div class="num">08</div>
+      <div class="title">Perguntas <em>frequentes</em></div>
+      <div class="meta">Antes de pedir orçamento</div>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Que zonas do Algarve servem?<span class="ic">+</span></summary>
+        <div class="ans"><p>Trabalhamos em todo o Algarve, com base nos concelhos de <strong>Loulé, Tavira, Faro e Lagos</strong>. Para obras fora desta área, fale connosco — avaliamos caso a caso.</p></div>
+      </details>
+      <details>
+        <summary>Como funciona o orçamento?<span class="ic">+</span></summary>
+        <div class="ans"><p>O primeiro contacto e a <strong>visita ao local são gratuitos</strong>. A partir daí preparamos uma proposta com plano, espécies e valores. Só avançamos depois da sua aprovação.</p></div>
+      </details>
+      <details>
+        <summary>Fazem manutenção depois da obra?<span class="ic">+</span></summary>
+        <div class="ans"><p>Sim. A maioria dos jardins fica connosco em <strong>contrato de manutenção</strong> (mensal ou trimestral). É o que garante que o jardim melhora com os anos em vez de se degradar.</p></div>
+      </details>
+      <details>
+        <summary>Os jardins de baixa rega ficam verdes no verão?<span class="ic">+</span></summary>
+        <div class="ans"><p>Ficam. Usamos <strong>espécies mediterrânicas adaptadas</strong> ao calor e rega por gotejamento eficiente — beleza durante todo o ano com uma fração da água de um relvado tradicional.</p></div>
+      </details>
+      <details>
+        <summary>Quanto tempo demora um projeto?<span class="ic">+</span></summary>
+        <div class="ans"><p>Depende da escala. Um jardim residencial típico leva de <strong>2 a 6 semanas</strong> entre projeto e construção. Indicamos sempre um calendário claro na proposta.</p></div>
+      </details>
     </div>
   </section>
 
@@ -774,6 +938,27 @@
     els.forEach(function(el){io.observe(el);});
   }else{
     els.forEach(function(el){el.classList.add('in');});
+  }
+
+  // Scrollspy — destaca o link da secção visível
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var map={};
+  links.forEach(function(a){
+    var id=a.getAttribute('href');
+    if(id&&id.charAt(0)==='#'){var s=document.querySelector(id);if(s)map[id]=a;}
+  });
+  var sections=Object.keys(map).map(function(id){return document.querySelector(id);});
+  if('IntersectionObserver' in window&&sections.length){
+    var spy=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active');});
+          var act=map['#'+e.target.id];
+          if(act)act.classList.add('active');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){spy.observe(s);});
   }
 })();
 </script>
