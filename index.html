@@ -1,645 +1,366 @@
 <!DOCTYPE html>
-<html lang="pt" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nuno Santos — Paisagismo · Algarve</title>
-<meta name="description" content="Estúdio de paisagismo no Algarve. Desenhamos, construímos e cuidamos de jardins mediterrânicos — pensados para o clima, a água que temos e para durar.">
+<title>Nuno Santos — Garden care in the eastern Algarve</title>
+<meta name="description" content="Pruning, planting, clearing and regular garden maintenance between Vila Real de Santo António and Faro. Based in Tavira. English spoken.">
+<meta name="theme-color" content="#447752">
+<link rel="canonical" href="https://nunosantos.info/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Nuno Santos — Garden care">
+<meta property="og:title" content="Nuno Santos — Garden care in the eastern Algarve">
+<meta property="og:description" content="Pruning, planting, clearing and regular maintenance between Vila Real de Santo António and Faro.">
+<meta property="og:url" content="https://nunosantos.info/">
+<meta property="og:image" content="https://nunosantos.info/assets/work-tavira-carob.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LandscapingBusiness",
+  "name": "Nuno Santos — Garden care",
+  "description": "Pruning, planting, clearing and regular garden maintenance in the eastern Algarve.",
+  "url": "https://nunosantos.info/",
+  "email": "landscaping@nunosantos.info",
+  "telephone": "+351938586285",
+  "image": "https://nunosantos.info/assets/work-tavira-carob.jpg",
+  "areaServed": [
+    {"@type": "City", "name": "Tavira"},
+    {"@type": "City", "name": "Vila Real de Santo António"},
+    {"@type": "City", "name": "Castro Marim"},
+    {"@type": "City", "name": "Olhão"},
+    {"@type": "City", "name": "Faro"}
+  ],
+  "address": {"@type": "PostalAddress", "addressLocality": "Tavira", "addressRegion": "Algarve", "addressCountry": "PT"},
+  "knowsLanguage": ["en", "pt"],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Regular garden maintenance"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Planting"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Clearing and garden work"}}
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 <style>
   :root{
-    /* GREEN-ONLY SYSTEM — um único matiz, do quase-preto à névoa */
-    --ink:#16241b;        /* texto · verde quase-preto */
-    --forest:#1f3d2b;     /* verde floresta */
-    --green:#2f5e3f;      /* verde médio */
-    --green-2:#3d7350;    /* verde médio claro */
-    --moss:#6f9a64;       /* musgo · acento vivo */
-    --sage:#9db98e;       /* sálvia · acento pálido */
-    --mist:#c3d4b8;       /* névoa */
-    --paper:#eef1e8;      /* papel · fundo padrão (off-white com tom verde) */
-    --paper-2:#e4ead9;    /* papel 2 */
-    --paper-3:#d8e1cb;    /* papel 3 */
-    --rule:#c8d2bd;       /* filetes */
-    --muted:#5f6d54;      /* texto secundário · verde-acinzentado */
+    /* Brand */
+    --green:#447752;
+    --green-dk:#335b3e;
+    --green-tint:#eef3ee;
+    --ink:#212427;
+    --ink-60:#5f6562;
+    --line:#dee1da;
+    --paper:#fbfbf8;
+    --paper-2:#f3f5f0;
+    --hero-bg:#eef1e8;
+    --head-bg:#fdfdfd;
+    --select:#d0ddd4;
+    --white:#ffffff;
+
+    /* Rhythm */
+    --gut:clamp(20px,5vw,56px);
+    --sec:clamp(64px,9vw,112px);
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  html,body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   body{
-    background-image:
-      radial-gradient(circle at 18% -5%, rgba(111,154,100,0.10), transparent 45%),
-      radial-gradient(circle at 90% 110%, rgba(31,61,43,0.10), transparent 50%);
-    background-attachment:fixed;
+    background:var(--paper);color:var(--ink);
+    font-family:'Archivo',system-ui,sans-serif;font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
-  ::selection{background:var(--moss);color:var(--paper)}
+  img{max-width:100%;display:block;height:auto}
+  ::selection{background:var(--select);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px}
 
-  .grain{
-    pointer-events:none;
-    position:fixed;inset:0;z-index:200;
-    opacity:0.035;mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut)}
+
+  /* Typography */
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:-0.015em;line-height:1.08}
+  h1{font-size:clamp(34px,5.8vw,64px);line-height:1.05;letter-spacing:-0.02em}
+  h2{font-size:clamp(27px,3.8vw,42px)}
+  h3{font-size:20px;letter-spacing:-0.014em}
+  .label{
+    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;
+    color:var(--green);display:flex;align-items:center;gap:10px;
+  }
+  .label::after{content:'';flex:1;height:1px;background:var(--line)}
+  .lead{font-size:clamp(16px,1.5vw,18px);color:var(--ink-60);max-width:52ch}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 26px;font-size:14px;font-weight:600;line-height:1;
+    border:1.5px solid transparent;transition:background .18s,color .18s,border-color .18s;
+    white-space:nowrap;
+  }
+  .btn svg{width:18px;height:18px;flex:none}
+  .btn-primary{background:var(--green);color:#fff}
+  .btn-primary:hover,.btn-primary:focus-visible{background:var(--green-dk)}
+  .btn-outline{border-color:var(--ink);color:var(--ink)}
+  .btn-outline:hover,.btn-outline:focus-visible{background:var(--ink);color:var(--paper)}
+  .btn-light{background:#fff;color:var(--green)}
+  .btn-light:hover,.btn-light:focus-visible{background:var(--green-tint)}
+  .btn-ghost-light{border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost-light:hover,.btn-ghost-light:focus-visible{background:rgba(255,255,255,.12);border-color:#fff}
+
+  /* Header */
+  .site-head{
+    position:sticky;top:0;z-index:50;background:var(--head-bg);
+    border-bottom:1px solid var(--line);
+  }
+  .head-in{max-width:1180px;margin:0 auto;padding-inline:var(--gut);
+    height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{display:flex;align-items:center}
+  .logo img{height:38px;width:auto}
+  .head-cta{padding:11px 18px;font-size:13px}
+
+  /* Hero */
+  .hero{background:var(--hero-bg);padding-block:clamp(48px,7vw,88px) var(--sec)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .hero h1{margin-top:22px;max-width:15ch}
+  .hero .lead{margin-top:24px}
+  .hero-actions{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-meta{margin-top:22px;font-size:13px;color:var(--ink-60)}
+  /* Photo captions sit inside the image, over a scrim so they stay
+     legible whatever the photo behind them is doing. */
+  .hero-fig,.app-fig{position:relative;overflow:hidden}
+  .hero-fig img,.app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .hero-fig figcaption,.app-fig figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    display:flex;justify-content:space-between;gap:14px;
+    padding:40px 16px 14px;
+    font-size:12px;color:#fff;
+    background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.26) 45%,transparent);
   }
 
-  .skip{
-    position:absolute;left:-9999px;top:0;z-index:300;
-    background:var(--ink);color:var(--paper);padding:10px 16px;
-    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
-  }
-  .skip:focus{left:8px;top:8px}
+  /* Services */
+  .services{padding-block:var(--sec);border-top:1px solid var(--line);background:var(--paper-2)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+    margin-top:40px;border:1px solid var(--line)}
+  .svc{background:var(--paper-2);padding:32px 28px 34px;display:flex;flex-direction:column;gap:14px}
+  .svc-ico{width:34px;height:34px;color:var(--green)}
+  .svc p{font-size:15px;color:var(--ink-60)}
 
-  .wrap{max-width:1440px;margin:0 auto;padding:0 56px}
+  /* Approach + photo */
+  .approach{padding-block:var(--sec)}
+  .app-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .app-body h2{margin-top:20px}
+  .app-body p{margin-top:20px;color:var(--ink-60);max-width:54ch}
+  .app-list{margin-top:26px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .app-list div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:baseline;font-size:15px}
+  .app-list b{font-weight:600;color:var(--green);font-variant-numeric:tabular-nums;min-width:24px}
 
-  /* ============ NAV ============ */
-  .nav{
-    position:sticky;top:0;z-index:150;
-    background:color-mix(in srgb, var(--paper) 86%, transparent);
-    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--ink);
-  }
-  .nav-inner{
-    max-width:1440px;margin:0 auto;padding:0 56px;
-    display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;
-    height:64px;
-  }
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .mark{
-    width:30px;height:30px;border:1.5px solid var(--ink);border-radius:50%;
-    display:grid;place-items:center;
-    font-family:'Fraunces',serif;font-style:italic;font-size:14px;line-height:1;
-    flex:none;
-  }
-  .brand .bn{
-    font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;line-height:1.3;
-  }
-  .brand .bn em{
-    display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:400;
-    font-size:13px;letter-spacing:0.04em;text-transform:none;color:var(--green);
-  }
-  .nav-links{
-    display:flex;justify-content:center;gap:30px;
-    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;
-  }
-  .nav-links a{position:relative;padding:4px 0;color:var(--muted);transition:color .2s}
-  .nav-links a::after{
-    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .25s ease;
-  }
-  .nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
-  .nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
-  .nav-cta{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--ink);color:var(--paper);
-    padding:9px 16px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;
-    transition:background .2s,transform .2s;
-  }
-  .nav-cta:hover,.nav-cta:focus-visible{background:var(--green)}
-  .nav-toggle{display:none;background:none;border:1px solid var(--ink);width:40px;height:36px;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center}
-  .nav-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);transition:.25s}
+  /* Quote panel */
+  .quote{background:var(--green);color:#fff}
+  .quote-in{max-width:1180px;margin:0 auto;padding-inline:var(--gut);
+    padding-block:var(--sec);display:grid;grid-template-columns:1fr .9fr;gap:clamp(32px,5vw,72px);align-items:start}
+  .quote .label{color:rgba(255,255,255,.85)}
+  .quote .label::after{background:rgba(255,255,255,.3)}
+  .quote h2{margin-top:20px}
+  .quote p{margin-top:18px;color:rgba(255,255,255,.88);max-width:44ch}
+  .quote-actions{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+  .quote-note{margin-top:22px;font-size:13px;color:rgba(255,255,255,.75)}
+  .checklist{border-top:1px solid rgba(255,255,255,.28);margin-top:8px}
+  .checklist div{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.28);
+    display:flex;gap:14px;align-items:baseline}
+  .checklist b{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:17px;
+    color:rgba(255,255,255,.7);min-width:26px}
+  .checklist span{font-size:15px;color:#fff}
 
-  /* ============ SECTION HEAD (padrão reutilizável) ============ */
-  .sec-head{
-    padding:96px 0 28px;
-    display:grid;grid-template-columns:96px 1fr auto;gap:24px;align-items:baseline;
-    border-bottom:1.5px solid var(--ink);
+  /* Footer */
+  .site-foot{padding-block:48px 56px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+  .foot-grid h4{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    font-weight:600;color:var(--ink-60);margin-bottom:12px}
+  .foot-grid p,.foot-grid a{font-size:15px;line-height:1.9;display:block}
+  .foot-grid a:hover{color:var(--green)}
+  .foot-bar{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:12px;color:var(--ink-60)}
+
+  /* Reveal */
+  .js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .js .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-grid,.app-grid,.quote-in{grid-template-columns:1fr}
+    .hero-fig,.app-fig{order:-1}
+    .hero-fig img,.app-fig img{aspect-ratio:4/3}
+    .svc-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
   }
-  .sec-head .num{
-    font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:40px;
-    color:var(--moss);letter-spacing:-0.02em;
-  }
-  .sec-head .title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:-0.018em;line-height:1.02}
-  .sec-head .title em{font-style:italic;color:var(--green)}
-  .sec-head .meta{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:right;white-space:nowrap}
-
-  /* ============ HERO ============ */
-  .hero{padding:96px 0 72px;display:grid;grid-template-columns:7fr 5fr;gap:72px;border-bottom:1px solid var(--ink);align-items:end}
-  .hero .eyebrow{
-    font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);font-weight:600;
-    display:flex;align-items:center;gap:10px;margin-bottom:28px;
-  }
-  .hero .eyebrow::before{content:'';width:30px;height:1px;background:var(--ink)}
-  .hero h1{
-    font-family:'Fraunces',serif;font-variation-settings:'opsz' 144,'SOFT' 50;
-    font-weight:340;font-size:clamp(54px,7.4vw,118px);line-height:0.9;letter-spacing:-0.035em;
-  }
-  .hero h1 em{font-style:italic;font-weight:300;color:var(--green)}
-  .hero .lede p{font-family:'Fraunces',serif;font-size:20px;line-height:1.45;max-width:36ch;font-weight:400}
-  .hero .lede p em{font-style:italic;color:var(--muted)}
-  .hero .stamp{
-    margin-top:28px;display:inline-grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;
-    padding:7px 14px 7px 7px;background:var(--ink);color:var(--paper);
-  }
-  .hero .stamp .v{font-family:'Fraunces',serif;font-style:italic;font-size:17px;background:var(--moss);color:var(--ink);padding:2px 11px}
-  .hero .stamp .t{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500}
-
-  /* ============ STATS ============ */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--ink)}
-  .stat{padding:34px 24px 34px 0;border-right:1px solid var(--rule)}
-  .stat:last-child{border-right:none}
-  .stat .fig{font-family:'Fraunces',serif;font-weight:350;font-size:clamp(38px,4.4vw,58px);line-height:0.9;letter-spacing:-0.03em}
-  .stat .fig em{font-style:italic;color:var(--moss)}
-  .stat .lab{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:12px}
-
-  /* ============ SERVIÇOS ============ */
-  .services{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);margin-top:36px}
-  .svc{padding:30px 24px 28px;border-right:1px solid var(--ink);display:flex;flex-direction:column;gap:18px;min-height:340px;transition:background .25s}
-  .svc:last-child{border-right:none}
-  .svc:hover{background:var(--paper-2)}
-  .svc .top{display:flex;align-items:center;justify-content:space-between}
-  .svc .nr{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted)}
-  .svc svg{width:30px;height:30px;color:var(--green)}
-  .svc h3{font-family:'Fraunces',serif;font-weight:400;font-size:23px;letter-spacing:-0.015em;line-height:1.05;margin-top:6px}
-  .svc h3 em{font-style:italic;color:var(--green)}
-  .svc p{font-size:12.5px;line-height:1.55;color:var(--muted);max-width:26ch}
-  .svc .more{margin-top:auto;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:8px}
-  .svc .more::after{content:'→';font-size:14px}
-
-  /* ============ PROJETOS ============ */
-  .featured{margin-top:40px;display:grid;grid-template-columns:1.25fr 1fr;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
-  .featured .img{position:relative;min-height:420px;overflow:hidden;background:linear-gradient(155deg,#5a7a4a 0%,#2f5e3f 48%,#16241b 100%)}
-  .featured .img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%, rgba(157,185,142,0.22), transparent 55%)}
-  .featured .img svg{position:absolute;bottom:-6%;right:-8%;width:62%;opacity:0.5;color:var(--ink)}
-  .featured .img .tag{position:absolute;top:18px;left:18px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:8px;color:var(--paper)}
-  .featured .img .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--moss)}
-  .featured .body{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:18px}
-  .featured .body .kicker{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);font-weight:600}
-  .featured .body h3{font-family:'Fraunces',serif;font-weight:340;font-size:clamp(32px,3.6vw,46px);line-height:0.96;letter-spacing:-0.025em}
-  .featured .body h3 em{font-style:italic;color:var(--moss)}
-  .featured .body p{font-family:'Fraunces',serif;font-size:15px;line-height:1.5;color:var(--mist);max-width:40ch}
-  .featured .body .meta{margin-top:8px;display:flex;gap:20px;font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);font-weight:500;border-top:1px solid rgba(238,241,232,0.2);padding-top:16px}
-
-  .grid-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
-  .proj{display:flex;flex-direction:column;gap:13px;cursor:pointer}
-  .proj .img{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--paper-2);border:1px solid var(--ink)}
-  .proj .img .ph{position:absolute;inset:0}
-  .proj:nth-child(1) .ph{background:linear-gradient(160deg,#7a9a5a,#2f5e3f)}
-  .proj:nth-child(2) .ph{background:linear-gradient(160deg,#4a6b4a,#16241b)}
-  .proj:nth-child(3) .ph{background:linear-gradient(160deg,#9db98e,#3d7350)}
-  .proj:nth-child(4) .ph{background:linear-gradient(160deg,#5a7a4a,#1f3d2b)}
-  .proj:nth-child(5) .ph{background:linear-gradient(160deg,#6f9a64,#2f5e3f)}
-  .proj .img .ph::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 40%, rgba(157,185,142,0.2), transparent 55%)}
-  .proj .img svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:72%;opacity:0.45;color:var(--ink);transition:transform .4s ease}
-  .proj:hover .img svg{transform:translateX(-50%) scale(1.06)}
-  .proj .img .nr{position:absolute;top:12px;left:12px;font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--paper)}
-  .proj .cap{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:10px}
-  .proj .cap h4{font-family:'Fraunces',serif;font-weight:400;font-size:19px;letter-spacing:-0.015em}
-  .proj .cap h4 em{font-style:italic;color:var(--green)}
-  .proj .cap .arrow{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--moss);transition:transform .25s}
-  .proj:hover .cap .arrow{transform:translate(3px,-3px)}
-  .proj .loc{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
-
-  /* ============ PROCESSO ============ */
-  .process{margin-top:40px;background:var(--ink);color:var(--paper);padding:48px 44px;border:1px solid var(--ink)}
-  .process .ph{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(238,241,232,0.22)}
-  .process .ph h3{font-family:'Fraunces',serif;font-weight:340;font-size:clamp(28px,3.2vw,40px);line-height:0.98;letter-spacing:-0.025em}
-  .process .ph h3 em{font-style:italic;color:var(--moss)}
-  .process .ph .nr{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);font-weight:600}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:36px}
-  .step .rn{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:46px;color:var(--moss);line-height:1;letter-spacing:-0.02em}
-  .step h4{font-family:'Fraunces',serif;font-weight:400;font-size:22px;margin-top:14px;letter-spacing:-0.01em}
-  .step p{font-size:13px;line-height:1.6;color:var(--mist);margin-top:12px;max-width:34ch}
-  .step .pic{margin-top:20px;aspect-ratio:3/2;position:relative;overflow:hidden;border:1px solid rgba(238,241,232,0.2)}
-  .step:nth-child(1) .pic{background:linear-gradient(135deg,#5a7a4a,#1f3d2b)}
-  .step:nth-child(2) .pic{background:linear-gradient(135deg,#6f9a64,#2f5e3f)}
-  .step:nth-child(3) .pic{background:linear-gradient(135deg,#9db98e,#3d7350)}
-  .step .pic::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 60%, rgba(157,185,142,0.18), transparent 60%)}
-
-  /* ============ ESTÚDIO ============ */
-  .studio{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;padding-top:44px;align-items:start}
-  .studio .lead{font-family:'Fraunces',serif;font-weight:340;font-size:clamp(22px,2.4vw,30px);line-height:1.25;letter-spacing:-0.015em}
-  .studio .lead em{font-style:italic;color:var(--green)}
-  .studio .body p{font-size:14px;line-height:1.7;color:var(--muted);margin-top:18px;max-width:52ch}
-  .studio .body p strong{color:var(--ink);font-weight:600}
-  .quote{background:var(--moss);color:var(--ink);padding:34px 30px;position:relative}
-  .quote .open{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:64px;line-height:0;display:block;margin-bottom:24px}
-  .quote blockquote{font-family:'Fraunces',serif;font-weight:340;font-size:27px;line-height:1.08;letter-spacing:-0.02em}
-  .quote blockquote em{font-style:italic;color:var(--forest)}
-  .quote .credit{margin-top:22px;padding-top:14px;border-top:1px solid var(--ink);font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between}
-  .quote .credit em{font-family:'Fraunces',serif;font-style:italic;font-size:12px;text-transform:none;letter-spacing:0}
-
-  .principles{grid-column:1/-1;margin-top:8px;display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--ink)}
-  .principle{display:flex;flex-direction:column;align-items:center;gap:12px;padding:26px 10px 20px;border-right:1px solid var(--ink);position:relative}
-  .principle:last-child{border-right:none}
-  .principle svg{width:34px;height:34px;color:var(--green)}
-  .principle .pt{position:absolute;top:8px;left:10px;font-family:'Fraunces',serif;font-style:italic;font-size:11px;color:var(--muted)}
-  .principle .label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);font-weight:600}
-
-  /* ============ DIÁRIO ============ */
-  .journal{padding-top:8px}
-  .entry{
-    display:grid;grid-template-columns:96px 1fr auto;gap:24px;align-items:baseline;
-    padding:26px 0;border-bottom:1px solid var(--rule);transition:padding-left .25s,background .25s;
-  }
-  .entry:hover{padding-left:14px;background:linear-gradient(90deg,var(--paper-2),transparent)}
-  .entry .e-nr{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--moss)}
-  .entry .e-main{display:flex;flex-direction:column;gap:7px}
-  .entry .e-tag{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:8px}
-  .entry .e-tag::before{content:'';width:8px;height:8px;border-radius:50%}
-  .entry.t-proj .e-tag::before{background:var(--moss)}
-  .entry.t-care .e-tag::before{background:var(--green)}
-  .entry.t-id .e-tag::before{background:var(--forest)}
-  .entry .e-title{font-family:'Fraunces',serif;font-weight:400;font-size:24px;letter-spacing:-0.018em;line-height:1.05}
-  .entry .e-title em{font-style:italic;color:var(--green)}
-  .entry .e-ex{font-size:13px;line-height:1.55;color:var(--muted);max-width:58ch}
-  .entry .e-date{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .journal-foot{margin-top:30px;display:flex;justify-content:flex-end}
-  .journal-foot a{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid var(--ink);padding-bottom:6px;transition:gap .2s}
-  .journal-foot a:hover{gap:16px}
-
-  /* ============ CONTACTO ============ */
-  .contact{margin-top:96px;border-top:2px solid var(--ink);padding-top:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
-  .contact h2{font-family:'Fraunces',serif;font-weight:330;font-size:clamp(40px,5.4vw,80px);line-height:0.92;letter-spacing:-0.03em}
-  .contact h2 em{font-style:italic;color:var(--green)}
-  .contact .sub{font-family:'Fraunces',serif;font-size:17px;line-height:1.45;color:var(--muted);margin-top:24px;max-width:38ch}
-  .contact-cta{margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);padding:15px 26px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;transition:background .2s}
-  .contact-cta:hover{background:var(--green)}
-  .contact-list{display:flex;flex-direction:column}
-  .contact-list .row{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:16px 0;border-top:1px solid var(--rule)}
-  .contact-list .row:last-child{border-bottom:1px solid var(--rule)}
-  .contact-list .k{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
-  .contact-list .val{font-family:'Fraunces',serif;font-size:18px}
-  .contact-list .val a:hover{color:var(--green)}
-
-  /* ============ COLOFÃO / FOOTER ============ */
-  .colophon{margin-top:96px;padding:34px 0 64px;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-  .colophon .col h5{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--muted);margin-bottom:12px;font-weight:400}
-  .colophon .col p,.colophon .col a{font-size:12px;line-height:1.7;color:var(--ink)}
-  .colophon .col .lk{display:block;color:var(--muted);transition:color .2s}
-  .colophon .col .lk:hover{color:var(--ink)}
-  .colophon .sign{grid-column:1/-1;margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;align-items:baseline;font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .colophon .sign em{font-family:'Fraunces',serif;font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:400}
-
-  /* ============ REVEAL ============ */
-  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-  .js .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width:1024px){
-    .wrap,.nav-inner{padding:0 32px}
-    .nav-links{display:none}
-    .nav-toggle{display:flex}
-    .hero{grid-template-columns:1fr;gap:36px;padding:64px 0 56px}
-    .stats{grid-template-columns:repeat(2,1fr)}
-    .stat:nth-child(2){border-right:none}
-    .stat:nth-child(-n+2){border-bottom:1px solid var(--rule)}
-    .services{grid-template-columns:repeat(2,1fr)}
-    .svc:nth-child(2){border-right:none}
-    .svc:nth-child(-n+2){border-bottom:1px solid var(--ink)}
-    .featured{grid-template-columns:1fr}
-    .featured .img{min-height:300px}
-    .grid-projects{grid-template-columns:repeat(2,1fr)}
-    .steps{grid-template-columns:1fr;gap:28px}
-    .studio{grid-template-columns:1fr;gap:36px}
-    .principles{grid-template-columns:repeat(3,1fr)}
-    .principle:nth-child(3){border-right:none}
-    .principle:nth-child(-n+3){border-bottom:1px solid var(--ink)}
-    .contact{grid-template-columns:1fr;gap:40px}
-    .colophon{grid-template-columns:repeat(2,1fr)}
-    /* mobile menu */
-    .nav.open .nav-links{
-      display:flex;flex-direction:column;align-items:flex-start;gap:0;
-      position:absolute;top:64px;left:0;right:0;background:var(--paper);
-      border-bottom:1px solid var(--ink);padding:8px 32px 16px;
-    }
-    .nav.open .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--rule);font-size:13px}
-    .nav.open .nav-toggle span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
-    .nav.open .nav-toggle span:nth-child(2){opacity:0}
-    .nav.open .nav-toggle span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
-  }
-  @media (max-width:640px){
-    .wrap,.nav-inner{padding:0 20px}
-    .sec-head{grid-template-columns:1fr;gap:8px;padding:64px 0 22px}
-    .sec-head .meta{text-align:left}
-    .services{grid-template-columns:1fr}
-    .svc{border-right:none!important;min-height:auto}
-    .svc:not(:last-child){border-bottom:1px solid var(--ink)}
-    .grid-projects{grid-template-columns:1fr}
-    .principles{grid-template-columns:repeat(2,1fr)}
-    .principle:nth-child(2n){border-right:none}
-    .colophon{grid-template-columns:1fr}
-    .entry{grid-template-columns:1fr;gap:8px}
-    .entry .e-date{order:-1}
-    .process{padding:32px 22px}
+  @media (max-width:560px){
+    .logo img{height:30px}
+    .head-cta span{display:none}
+    .head-cta{padding:11px 13px}
+    .foot-grid{grid-template-columns:1fr}
+    .hero-actions .btn,.quote-actions .btn{width:100%}
+    .hero-actions,.quote-actions{flex-direction:column;align-items:stretch}
   }
 </style>
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-<a class="skip" href="#projetos">Saltar para o conteúdo</a>
-
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top" aria-label="Nuno Santos · Paisagismo">
-      <span class="mark">N</span>
-      <span class="bn">Nuno Santos<em>Paisagismo · Algarve</em></span>
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="head-in">
+    <a class="logo" href="#top">
+      <img src="assets/logo.svg" alt="Nuno Santos Landscaping" width="214" height="40">
     </a>
-    <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#projetos">Projetos</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#processo">Processo</a>
-      <a href="#estudio">Estúdio</a>
-      <a href="#diario">Diário</a>
-    </nav>
-    <a class="nav-cta" href="#contacto">Pedir orçamento</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-primary head-cta"
+       href="https://wa.me/351938586285?text=Hello%20Nuno%2C%20I%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20"
+       target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.533 5.851L.057 23.885a.5.5 0 0 0 .606.606l6.104-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.034-1.376l-.36-.214-3.733.896.928-3.654-.235-.376A9.865 9.865 0 0 1 2.1 12C2.1 6.525 6.525 2.1 12 2.1S21.9 6.525 21.9 12 17.475 21.9 12 21.9z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      <span>WhatsApp</span>
+    </a>
   </div>
 </header>
 
-<main class="wrap" id="top">
+<main id="top">
 
   <!-- ============ HERO ============ -->
-  <section class="hero reveal">
-    <div>
-      <div class="eyebrow">Estúdio de paisagismo — desde 2014</div>
-      <h1>Jardins que<br>envelhecem<br>com <em>graça</em>.</h1>
+  <section class="hero">
+   <div class="wrap">
+    <div class="hero-grid">
+      <div class="rv">
+        <p class="label">Tavira · eastern Algarve</p>
+        <h1>We look after gardens in the eastern Algarve.</h1>
+        <p class="lead">Pruning, planting, clearing and regular maintenance, from Vila Real de Santo António to Faro. Many of the gardens we look after belong to people who aren't here all year — we keep things in shape until they're back.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary"
+             href="https://wa.me/351938586285?text=Hello%20Nuno%2C%20I%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20"
+             target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.533 5.851L.057 23.885a.5.5 0 0 0 .606.606l6.104-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.034-1.376l-.36-.214-3.733.896.928-3.654-.235-.376A9.865 9.865 0 0 1 2.1 12C2.1 6.525 6.525 2.1 12 2.1S21.9 6.525 21.9 12 17.475 21.9 12 21.9z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            Ask for a quote
+          </a>
+          <a class="btn btn-outline" href="#quote">How it works</a>
+        </div>
+        <p class="hero-meta">Português &amp; English · +351 938 586 285</p>
+      </div>
+
+      <figure class="hero-fig rv">
+        <img src="assets/work-tavira-carob.jpg"
+             alt="A mature carob tree above a new gravel bed planted with ornamental grasses, in a garden near Tavira"
+             width="787" height="1400" fetchpriority="high">
+        <figcaption><span>Carob cleared and underplanted</span><span>Tavira</span></figcaption>
+      </figure>
     </div>
-    <div class="lede">
-      <p>Desenhamos, construímos e cuidamos de jardins mediterrânicos no Algarve. <em>Pensados para o clima, para a água que temos — e para durar.</em></p>
-      <div class="stamp">
-        <span class="v">NS</span>
-        <span class="t">Loulé · Tavira · Faro · Lagos</span>
+   </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <p class="label rv">What we do</p>
+      <div class="svc-grid rv">
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8 7.6 20 17M8 16.4 20 7"/></svg>
+          <h3>Regular maintenance</h3>
+          <p>Pruning, weeding, irrigation checks, clearing and taking the green waste away. Weekly, fortnightly or monthly — whatever the garden needs.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11M12 11c-4 0-6-3-6-6 4 0 6 3 6 6ZM12 11c3 0-1-5 5-7 1 5-2 7-5 7Z"/></svg>
+          <h3>Planting</h3>
+          <p>Olive, carob, citrus, lavender and grasses — plants that cope with the summer here without needing water every day.</p>
+        </article>
+        <article class="svc">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20l1.5-5h11L19 20M8 15l1.8-4h4.4l1.8 4M11 11V4h2v7"/></svg>
+          <h3>Clearing &amp; garden work</h3>
+          <p>Overgrown ground cleared, new beds, gravel, irrigation lines and general tidying up before a season or a sale.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ STATS ============ -->
-  <section class="stats reveal" aria-label="Em números">
-    <div class="stat"><div class="fig">10<em>+</em></div><div class="lab">Anos de campo</div></div>
-    <div class="stat"><div class="fig">120</div><div class="lab">Jardins entregues</div></div>
-    <div class="stat"><div class="fig">240</div><div class="lab">Espécies usadas</div></div>
-    <div class="stat"><div class="fig">8</div><div class="lab">Concelhos servidos</div></div>
-  </section>
-
-  <!-- ============ SERVIÇOS ============ -->
-  <section id="servicos">
-    <div class="sec-head reveal">
-      <div class="num">01</div>
-      <div class="title">O que <em>fazemos</em></div>
-      <div class="meta">Quatro frentes · um só estúdio</div>
-    </div>
-    <div class="services reveal">
-      <div class="svc">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V5a1 1 0 0 1 1-1h11l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M16 4v4h4M8 11h8M8 15h5"/></svg>
-          <span class="nr">N.º 01</span>
-        </div>
-        <h3>Desenho <em>&amp;</em> projeto</h3>
-        <p>Do levantamento do terreno ao plano de plantação. Estudo de luz, água e solo antes de qualquer linha.</p>
-        <span class="more">Projetar</span>
-      </div>
-      <div class="svc">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21v-8l7-4 7 4v8M9 21v-5h6v5M3 13l9-5 9 5"/></svg>
-          <span class="nr">N.º 02</span>
-        </div>
-        <h3>Construção</h3>
-        <p>Caminhos, muros, água, iluminação e estruturas. Obra coordenada por quem vai cuidar do jardim depois.</p>
-        <span class="more">Construir</span>
-      </div>
-      <div class="svc">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11M12 11c-4 0-6-3-6-6 4 0 6 3 6 6zM12 11c3 0-1-5 5-7 1 5-2 7-5 7z"/></svg>
-          <span class="nr">N.º 03</span>
-        </div>
-        <h3>Plantação</h3>
-        <p>Espécies adaptadas ao Algarve — oliveiras, aromáticas, suculentas. Baixa rega, longa vida.</p>
-        <span class="more">Plantar</span>
-      </div>
-      <div class="svc">
-        <div class="top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0M3 12a9 9 0 0 0 18 0M12 3v18"/><circle cx="12" cy="12" r="2.2"/></svg>
-          <span class="nr">N.º 04</span>
-        </div>
-        <h3>Manutenção</h3>
-        <p>Calendário sazonal, rega, poda e saúde das plantas. O jardim que continua bom no terceiro verão.</p>
-        <span class="more">Cuidar</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJETOS ============ -->
-  <section id="projetos">
-    <div class="sec-head reveal">
-      <div class="num">02</div>
-      <div class="title">Jardins <em>concluídos</em></div>
-      <div class="meta">Seleção · 2023 — 2025</div>
-    </div>
-
-    <article class="featured reveal">
-      <div class="img">
-        <span class="tag"><span class="dot"></span>Projeto N.º 27 · destaque</span>
-        <svg viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
-          <path d="M100 190 Q88 145 66 112 Q50 90 34 74 Q58 80 80 96 Q96 108 100 126 L100 190 Z" opacity="0.6"/>
-          <path d="M100 190 Q112 138 134 104 Q150 82 172 66 Q154 92 138 118 Q122 140 110 168 L100 190 Z" opacity="0.5"/>
-          <path d="M100 190 Q100 150 100 112 Q100 80 106 48 Q110 80 110 116 Q110 152 106 190 L100 190 Z" opacity="0.55"/>
-        </svg>
-      </div>
-      <div class="body">
-        <div class="kicker">Tavira · Verão de 2025</div>
-        <h3>Quinta da <em>Boa Vista</em></h3>
-        <p>Um pomar abandonado devolvido à vida: terraços de sequeiro, oliveiras centenárias preservadas e um jardim que vive com a chuva que cai.</p>
-        <div class="meta"><span>Área 4 200 m²</span><span>Rega -60%</span><span>18 espécies</span></div>
-      </div>
-    </article>
-
-    <div class="grid-projects reveal">
-      <article class="proj">
-        <div class="img"><span class="nr">N.º 24</span><div class="ph"></div>
-          <svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><path d="M50 120 L50 50 M50 70 Q32 58 22 40 Q40 46 50 64 M50 58 Q68 46 80 30 Q72 50 50 64"/><ellipse cx="30" cy="44" rx="10" ry="4" transform="rotate(-30 30 44)"/><ellipse cx="70" cy="38" rx="12" ry="4" transform="rotate(25 70 38)"/></svg>
-        </div>
-        <div class="cap"><h4>Casa do <em>Pinhal</em></h4><span class="arrow">→</span></div>
-        <div class="loc">Loulé · 2025</div>
-      </article>
-      <article class="proj">
-        <div class="img"><span class="nr">N.º 22</span><div class="ph"></div>
-          <svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><path d="M30 120 Q40 70 55 58 Q60 80 52 120 Z M55 120 Q72 50 88 48 Q92 78 80 120 Z" opacity="0.85"/></svg>
-        </div>
-        <div class="cap"><h4>Terraço <em>Atlântico</em></h4><span class="arrow">→</span></div>
-        <div class="loc">Lagos · 2024</div>
-      </article>
-      <article class="proj">
-        <div class="img"><span class="nr">N.º 19</span><div class="ph"></div>
-          <svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><path d="M50 120 L50 40 M50 60 Q34 52 26 38 M50 60 Q66 52 74 38 M50 80 Q38 74 30 64 M50 80 Q62 74 70 64"/><circle cx="50" cy="34" r="6"/></svg>
-        </div>
-        <div class="cap"><h4>Jardim de <em>Sequeiro</em></h4><span class="arrow">→</span></div>
-        <div class="loc">São Brás · 2024</div>
-      </article>
-      <article class="proj">
-        <div class="img"><span class="nr">N.º 15</span><div class="ph"></div>
-          <svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><path d="M40 120 L40 95 L60 95 L60 120 Z" opacity="0.9"/><path d="M50 95 L50 45 M50 64 Q34 56 26 42 M50 58 Q66 48 76 34"/><ellipse cx="32" cy="46" rx="9" ry="3.5" transform="rotate(-30 32 46)"/><ellipse cx="68" cy="40" rx="11" ry="3.5" transform="rotate(25 68 40)"/></svg>
-        </div>
-        <div class="cap"><h4>Pátio das <em>Oliveiras</em></h4><span class="arrow">→</span></div>
-        <div class="loc">Faro · 2023</div>
-      </article>
-      <article class="proj">
-        <div class="img"><span class="nr">N.º 11</span><div class="ph"></div>
-          <svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><path d="M20 120 Q30 80 44 70 Q50 92 44 120 Z M48 120 Q64 60 82 56 Q88 86 74 120 Z" opacity="0.85"/></svg>
-        </div>
-        <div class="cap"><h4>Horta <em>Mediterrânica</em></h4><span class="arrow">→</span></div>
-        <div class="loc">Tavira · 2023</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============ PROCESSO ============ -->
-  <section id="processo">
-    <div class="sec-head reveal">
-      <div class="num">03</div>
-      <div class="title">O <em>processo</em>, em três tempos</div>
-      <div class="meta">Do estudo à vida do jardim</div>
-    </div>
-    <div class="process reveal">
-      <div class="ph">
-        <h3>Cada jardim começa<br>por <em>ouvir o terreno</em>.</h3>
-        <span class="nr">Método N.S</span>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="rn">I</div>
-          <h4>Estudo</h4>
-          <p>Visita, levantamento e leitura do sítio. Luz, vento, água e solo decidem antes de nós.</p>
-          <div class="pic"></div>
-        </div>
-        <div class="step">
-          <div class="rn">II</div>
-          <h4>Construção</h4>
-          <p>Estruturas, sistema de rega e plantação. A obra feita à medida do plano e da estação certa.</p>
-          <div class="pic"></div>
-        </div>
-        <div class="step">
-          <div class="rn">III</div>
-          <h4>Vida</h4>
-          <p>Manutenção e acompanhamento. O jardim cresce, ajusta-se e melhora ano após ano.</p>
-          <div class="pic"></div>
+  <!-- ============ APPROACH ============ -->
+  <section class="approach wrap">
+    <div class="app-grid">
+      <figure class="app-fig rv">
+        <img src="assets/work-tavira-olive.jpg"
+             alt="An olive tree pruned into a rounded shape, in a gravel garden with a young staked tree, near Tavira"
+             width="903" height="1200" loading="lazy">
+        <figcaption><span>Olive pruned and shaped</span><span>Tavira</span></figcaption>
+      </figure>
+      <div class="app-body rv">
+        <p class="label">How we work</p>
+        <h2>A small team, the same faces each visit.</h2>
+        <p>We come and see the garden before quoting, so the price is based on the actual work and not a guess. After that it's straightforward — we agree what's needed, how often, and get on with it.</p>
+        <div class="app-list">
+          <div><b>1</b><span>You send a message with the basics.</span></div>
+          <div><b>2</b><span>We visit the garden and give you a price.</span></div>
+          <div><b>3</b><span>We start, and send photos after each visit if you're away.</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ESTÚDIO ============ -->
-  <section id="estudio">
-    <div class="sec-head reveal">
-      <div class="num">04</div>
-      <div class="title">O <em>estúdio</em></div>
-      <div class="meta">Nuno Santos + equipa · Algarve</div>
-    </div>
-    <div class="studio">
-      <div class="reveal">
-        <p class="lead">Trabalhamos a uma escala humana: <em>poucos jardins de cada vez</em>, cada um seguido pela mesma equipa, do primeiro esboço à poda do terceiro inverno.</p>
-        <div class="body">
-          <p>Começámos no Algarve em 2014 com uma convicção simples — um jardim mediterrânico não se impõe à paisagem, <strong>cresce a partir dela</strong>. Escolhemos espécies que pertencem a este clima, projetamos para a água que existe e construímos para que o jardim fique melhor com o tempo, não pior.</p>
-          <p>Não há atalhos. Há <strong>sistema, estação certa e paciência</strong> — e um caderno de campo que anda connosco há mais de uma década.</p>
+  <!-- ============ QUOTE ============ -->
+  <section class="quote" id="quote">
+    <div class="quote-in">
+      <div class="rv">
+        <p class="label">Get in touch</p>
+        <h2>Ask for a quote.</h2>
+        <p>Send a message on WhatsApp or by email and we'll come and look at the garden. No charge for the visit.</p>
+        <div class="quote-actions">
+          <a class="btn btn-light"
+             href="https://wa.me/351938586285?text=Hello%20Nuno%2C%20I%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20"
+             target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.533 5.851L.057 23.885a.5.5 0 0 0 .606.606l6.104-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.034-1.376l-.36-.214-3.733.896.928-3.654-.235-.376A9.865 9.865 0 0 1 2.1 12C2.1 6.525 6.525 2.1 12 2.1S21.9 6.525 21.9 12 17.475 21.9 12 21.9z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn btn-ghost-light"
+             href="mailto:landscaping@nunosantos.info?subject=Quote%20request&body=Hello%20Nuno%2C%0A%0AI%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20%0A%0AThank%20you%2C%0A">
+            Email
+          </a>
         </div>
-      </div>
-      <div class="quote reveal">
-        <span class="open">&ldquo;</span>
-        <blockquote>Sistema e <em>paciência</em> curam tudo.</blockquote>
-        <div class="credit"><span>Caderno de campo</span><em>— N.S</em></div>
+        <p class="quote-note">+351 938 586 285 · landscaping@nunosantos.info</p>
       </div>
 
-      <div class="principles reveal" aria-label="Princípios de cuidado">
-        <div class="principle"><span class="pt">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.5"/><path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><span class="label">Sol</span></div>
-        <div class="principle"><span class="pt">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c0 0-6 7-6 11.5a6 6 0 0 0 12 0c0-4.5-6-11.5-6-11.5z"/></svg><span class="label">Rega</span></div>
-        <div class="principle"><span class="pt">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18l1-4h12l1 4M8 14l2-4h4l2 4M11 10V5h2v5"/></svg><span class="label">Solo</span></div>
-        <div class="principle"><span class="pt">04</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12l-1.5 11h-9L6 9zM5 9h14M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="label">Vaso</span></div>
-        <div class="principle"><span class="pt">05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9.5C1.5 7 4 4 7 4c2 0 3.5 1.5 5 3.5C13.5 5.5 15 4 17 4c3 0 5.5 3 4 7.5C19 16.5 12 21 12 21z"/></svg><span class="label">Poda</span></div>
-        <div class="principle"><span class="pt">06</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4a2 2 0 1 1 4 0v10.5a4 4 0 1 1-4 0V4z"/><circle cx="12" cy="17" r="1.5" fill="currentColor"/></svg><span class="label">Clima</span></div>
+      <div class="rv">
+        <div class="checklist">
+          <div><b>01</b><span>Where the garden is</span></div>
+          <div><b>02</b><span>Roughly how big it is</span></div>
+          <div><b>03</b><span>What you'd like done</span></div>
+          <div><b>04</b><span>A photo, if you have one</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ DIÁRIO ============ -->
-  <section id="diario">
-    <div class="sec-head reveal">
-      <div class="num">05</div>
-      <div class="title">Do <em>caderno de campo</em></div>
-      <div class="meta">Notas · cuidados · espécies</div>
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-foot wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Nuno Santos</h4>
+        <p>Garden care and maintenance,<br>based in Tavira, Algarve.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+351938586285">+351 938 586 285</a>
+        <a href="mailto:landscaping@nunosantos.info">landscaping@nunosantos.info</a>
+      </div>
+      <div>
+        <h4>Area</h4>
+        <p>Vila Real de Santo António,<br>Castro Marim, Tavira,<br>Olhão and Faro.</p>
+      </div>
     </div>
-    <div class="journal reveal">
-      <a class="entry t-care" href="#diario">
-        <div class="e-nr">N.º 14</div>
-        <div class="e-main">
-          <span class="e-tag">Cuidados · Verão</span>
-          <span class="e-title">Rega ao <em>amanhecer</em></span>
-          <span class="e-ex">Por que a hora da rega importa mais que a quantidade — e como o mulch grosso retém a humidade no pico do calor algarvio.</span>
-        </div>
-        <div class="e-date">Jul 2025</div>
-      </a>
-      <a class="entry t-id" href="#diario">
-        <div class="e-nr">N.º 03</div>
-        <div class="e-main">
-          <span class="e-tag">Ficha de planta</span>
-          <span class="e-title">Oliveira · <em>Olea europaea</em></span>
-          <span class="e-ex">Sol pleno, rega baixa, perene. A árvore que define a paisagem do sul e ancora quase todos os nossos jardins.</span>
-        </div>
-        <div class="e-date">Mai 2025</div>
-      </a>
-      <a class="entry t-proj" href="#diario">
-        <div class="e-nr">N.º 21</div>
-        <div class="e-main">
-          <span class="e-tag">Bastidores</span>
-          <span class="e-title">Três tempos de uma <em>obra</em></span>
-          <span class="e-ex">Antes, meio e depois da Quinta da Boa Vista — o que muda num pomar quando se lhe devolve a água certa.</span>
-        </div>
-        <div class="e-date">Abr 2025</div>
-      </a>
-    </div>
-    <div class="journal-foot reveal">
-      <a href="sistema.html">Ver o sistema editorial completo →</a>
-    </div>
-  </section>
-
-  <!-- ============ CONTACTO ============ -->
-  <section id="contacto" class="contact reveal">
-    <div>
-      <h2>Vamos desenhar<br>o <em>seu jardim</em>.</h2>
-      <p class="sub">Conte-nos sobre o espaço, a luz que tem e o que sonha. Respondemos com uma visita e uma primeira ideia.</p>
-      <a class="contact-cta" href="mailto:geral@nunosantos.info?subject=Pedido%20de%20or%C3%A7amento">Pedir orçamento →</a>
-    </div>
-    <div class="contact-list">
-      <div class="row"><span class="k">Email</span><span class="val"><a href="mailto:geral@nunosantos.info">geral@nunosantos.info</a></span></div>
-      <div class="row"><span class="k">Telefone</span><span class="val"><a href="tel:+351000000000">+351 000 000 000</a></span></div>
-      <div class="row"><span class="k">Área</span><span class="val">Algarve · Portugal</span></div>
-      <div class="row"><span class="k">Redes</span><span class="val"><a href="#contacto">Instagram</a> · <a href="#contacto">Facebook</a></span></div>
-    </div>
-  </section>
-
-  <!-- ============ COLOFÃO ============ -->
-  <footer class="colophon">
-    <div class="col">
-      <h5>Estúdio</h5>
-      <p>Nuno Santos — Paisagismo. Desenho, construção, plantação e manutenção de jardins mediterrânicos no Algarve.</p>
-    </div>
-    <div class="col">
-      <h5>Navegação</h5>
-      <a class="lk" href="#projetos">Projetos</a>
-      <a class="lk" href="#servicos">Serviços</a>
-      <a class="lk" href="#processo">Processo</a>
-      <a class="lk" href="#estudio">Estúdio</a>
-      <a class="lk" href="sistema.html">Sistema editorial</a>
-    </div>
-    <div class="col">
-      <h5>Contacto</h5>
-      <a class="lk" href="mailto:geral@nunosantos.info">geral@nunosantos.info</a>
-      <a class="lk" href="tel:+351000000000">+351 000 000 000</a>
-      <p>nunosantos.info</p>
-    </div>
-    <div class="col">
-      <h5>Tipografia</h5>
-      <p>Fraunces (títulos) · Archivo (texto). Sistema cromático monocromático verde.</p>
-    </div>
-    <div class="sign">
-      <span>© 2026 Nuno Santos · Paisagismo · Algarve</span>
-      <em>nunosantos.info</em>
+    <div class="foot-bar">
+      <span>© 2026 Nuno Santos</span>
+      <span>Português &amp; English</span>
     </div>
   </footer>
 
@@ -647,34 +368,16 @@
 
 <script>
 (function(){
-  // Mobile menu
-  var nav=document.getElementById('nav');
-  var toggle=document.getElementById('navToggle');
-  if(toggle){
-    toggle.addEventListener('click',function(){
-      var open=nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded',open?'true':'false');
-      toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
-    });
-    nav.querySelectorAll('.nav-links a').forEach(function(a){
-      a.addEventListener('click',function(){
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded','false');
-      });
-    });
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in');});return;
   }
-  // Reveal on scroll
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-      });
-    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(el){io.observe(el);});
-  }else{
-    els.forEach(function(el){el.classList.add('in');});
-  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
 })();
 </script>
 
