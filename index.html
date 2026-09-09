@@ -133,12 +133,16 @@
   .hero .lead{margin-top:24px}
   .hero-actions{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
   .hero-meta{margin-top:22px;font-size:13px;color:var(--ink-60)}
-  .hero-fig{position:relative}
-  .hero-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .hero-fig figcaption{
-    margin-top:12px;font-size:12px;color:var(--ink-60);
-    display:flex;justify-content:space-between;gap:12px;
-    border-top:1px solid var(--line);padding-top:10px;
+  /* Photo captions sit inside the image, over a scrim so they stay
+     legible whatever the photo behind them is doing. */
+  .hero-fig,.app-fig{position:relative;overflow:hidden}
+  .hero-fig img,.app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .hero-fig figcaption,.app-fig figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    display:flex;justify-content:space-between;gap:14px;
+    padding:40px 16px 14px;
+    font-size:12px;color:#fff;
+    background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,.26) 45%,transparent);
   }
 
   /* Services */
@@ -152,9 +156,6 @@
   /* Approach + photo */
   .approach{padding-block:var(--sec)}
   .app-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:center}
-  .app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .app-fig figcaption{margin-top:12px;font-size:12px;color:var(--ink-60);
-    border-top:1px solid var(--line);padding-top:10px}
   .app-body h2{margin-top:20px}
   .app-body p{margin-top:20px;color:var(--ink-60);max-width:54ch}
   .app-list{margin-top:26px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
@@ -292,7 +293,7 @@
         <img src="assets/work-tavira-olive.jpg"
              alt="An olive tree pruned into a rounded shape, in a gravel garden with a young staked tree, near Tavira"
              width="903" height="1200" loading="lazy">
-        <figcaption>Olive pruned and shaped — Tavira</figcaption>
+        <figcaption><span>Olive pruned and shaped</span><span>Tavira</span></figcaption>
       </figure>
       <div class="app-body rv">
         <p class="label">How we work</p>
