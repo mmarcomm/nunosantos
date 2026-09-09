@@ -7,8 +7,8 @@
 <meta name="description" content="Pruning, planting, clearing and regular garden maintenance between Vila Real de Santo António and Faro. Based in Tavira. English spoken.">
 <meta name="theme-color" content="#447752">
 <link rel="canonical" href="https://nunosantos.info/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 44V13' fill='none' stroke='%23212427' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M24 31c0-8-6-14-14-14 0 8 6 14 14 14Z' fill='%23447752'/%3E%3Cpath d='M24 23c0-8 6-14 14-14 0 8-6 14-14 14Z' fill='%23447752'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="assets/logo.svg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
@@ -120,11 +120,8 @@
   }
   .head-in{max-width:1180px;margin:0 auto;padding-inline:var(--gut);
     height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-  .logo{display:flex;align-items:center;gap:11px}
-  .logo img{height:32px;width:auto}
-  .logo-text{font-family:'Fraunces',Georgia,serif;font-size:18px;letter-spacing:-0.015em;line-height:1.1;white-space:nowrap}
-  .logo-text small{display:block;font-family:'Archivo',sans-serif;font-size:10px;
-    letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-60);font-weight:500;margin-top:2px}
+  .logo{display:flex;align-items:center}
+  .logo img{height:38px;width:auto}
   .head-cta{padding:11px 18px;font-size:13px}
 
   /* Hero */
@@ -204,11 +201,11 @@
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:560px){
-    .logo-text small{display:none}
+    .logo img{height:30px}
     .head-cta span{display:none}
     .head-cta{padding:11px 13px}
     .foot-grid{grid-template-columns:1fr}
-    .btn{width:100%}
+    .hero-actions .btn,.quote-actions .btn{width:100%}
     .hero-actions,.quote-actions{flex-direction:column;align-items:stretch}
   }
 </style>
@@ -218,10 +215,8 @@
 <!-- ============ HEADER ============ -->
 <header class="site-head">
   <div class="head-in">
-    <a class="logo" href="#top" aria-label="Nuno Santos — Garden care, home">
-      <!-- Swap assets/logo.svg for the real logo; keep height ~32px -->
-      <img src="assets/logo.svg" alt="" width="48" height="48">
-      <span class="logo-text">Nuno Santos<small>Garden care · Algarve</small></span>
+    <a class="logo" href="#top">
+      <img src="assets/logo.svg" alt="Nuno Santos Landscaping" width="214" height="40">
     </a>
     <a class="btn btn-primary head-cta"
        href="https://wa.me/351938586285?text=Hello%20Nuno%2C%20I%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20"
