@@ -127,17 +127,22 @@
   .head-cta{padding:11px 18px;font-size:13px}
 
   /* Hero */
-  .hero{background:var(--hero-bg);padding-block:clamp(48px,7vw,88px) var(--sec)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
-  .hero h1{margin-top:22px;max-width:15ch}
-  .hero .lead{margin-top:24px}
-  .hero-actions{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
-  .hero-meta{margin-top:22px;font-size:13px;color:var(--ink-60)}
+  .hero{background:var(--hero-bg);padding-block:clamp(28px,3.5vw,44px) var(--sec)}
+  /* The photo leads the page. Held to the grid, not full bleed: the
+     source is 787px wide and goes soft stretched across a viewport. */
+  .lead-fig{position:relative;overflow:hidden;margin:0}
+  .lead-fig img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 45%}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4.5vw,64px);
+    align-items:end;margin-top:clamp(30px,4vw,48px)}
+  .hero h1{margin-top:18px;max-width:15ch}
+  .hero .lead{margin-top:0}
+  .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-meta{margin-top:18px;font-size:13px;color:var(--ink-60)}
   /* Photo captions sit inside the image, over a scrim so they stay
      legible whatever the photo behind them is doing. */
-  .hero-fig,.app-fig,.plate-fig{position:relative;overflow:hidden}
-  .hero-fig img,.app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .hero-fig figcaption,.app-fig figcaption,.plate-fig figcaption{
+  .app-fig,.plate-fig,.lead-fig{position:relative;overflow:hidden}
+  .app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .app-fig figcaption,.plate-fig figcaption,.lead-fig figcaption{
     position:absolute;left:0;right:0;bottom:0;
     display:flex;justify-content:space-between;gap:14px;
     padding:40px 16px 14px;
@@ -204,8 +209,9 @@
   /* Responsive */
   @media (max-width:900px){
     .hero-grid,.app-grid,.quote-in{grid-template-columns:1fr}
-    .hero-fig,.app-fig{order:-1}
-    .hero-fig img,.app-fig img{aspect-ratio:4/3}
+    .app-fig{order:-1}
+    .app-fig img{aspect-ratio:4/3}
+    .lead-fig img{aspect-ratio:3/2}
     .plate-fig img{aspect-ratio:3/2}
     .svc-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
@@ -243,10 +249,19 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
    <div class="wrap">
-    <div class="hero-grid">
-      <div class="rv">
+    <figure class="lead-fig rv">
+      <img src="assets/work-tavira-carob.jpg"
+           alt="A mature carob tree above a new gravel bed planted with ornamental grasses, in a garden near Tavira"
+           width="787" height="1400" fetchpriority="high">
+      <figcaption><span>Carob cleared and underplanted</span><span>Tavira</span></figcaption>
+    </figure>
+
+    <div class="hero-grid rv">
+      <div>
         <p class="label">Tavira · eastern Algarve</p>
         <h1>We look after gardens in the eastern Algarve.</h1>
+      </div>
+      <div class="hero-side">
         <p class="lead">Pruning, planting, clearing and regular maintenance, from Vila Real de Santo António to Faro. Many of the gardens we look after belong to people who aren't here all year — we keep things in shape until they're back.</p>
         <div class="hero-actions">
           <a class="btn btn-primary"
@@ -259,13 +274,6 @@
         </div>
         <p class="hero-meta">Português &amp; English · +351 938 586 285</p>
       </div>
-
-      <figure class="hero-fig rv">
-        <img src="assets/work-tavira-carob.jpg"
-             alt="A mature carob tree above a new gravel bed planted with ornamental grasses, in a garden near Tavira"
-             width="787" height="1400" fetchpriority="high">
-        <figcaption><span>Carob cleared and underplanted</span><span>Tavira</span></figcaption>
-      </figure>
     </div>
    </div>
   </section>
