@@ -135,9 +135,9 @@
   .hero-meta{margin-top:22px;font-size:13px;color:var(--ink-60)}
   /* Photo captions sit inside the image, over a scrim so they stay
      legible whatever the photo behind them is doing. */
-  .hero-fig,.app-fig{position:relative;overflow:hidden}
+  .hero-fig,.app-fig,.plate-fig{position:relative;overflow:hidden}
   .hero-fig img,.app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .hero-fig figcaption,.app-fig figcaption{
+  .hero-fig figcaption,.app-fig figcaption,.plate-fig figcaption{
     position:absolute;left:0;right:0;bottom:0;
     display:flex;justify-content:space-between;gap:14px;
     padding:40px 16px 14px;
@@ -152,6 +152,12 @@
   .svc{background:var(--paper-2);padding:32px 28px 34px;display:flex;flex-direction:column;gap:14px}
   .svc-ico{width:34px;height:34px;color:var(--green)}
   .svc p{font-size:15px;color:var(--ink-60)}
+
+  /* Wide plate — the one landscape photo, held to the grid so it stays
+     sharp (the source is 1206px wide) and keeps the page's alignment. */
+  .plate{padding-block:clamp(40px,5vw,64px) 0}
+  .plate-fig{margin:0}
+  .plate-fig img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center 58%}
 
   /* Approach + photo */
   .approach{padding-block:var(--sec)}
@@ -200,6 +206,7 @@
     .hero-grid,.app-grid,.quote-in{grid-template-columns:1fr}
     .hero-fig,.app-fig{order:-1}
     .hero-fig img,.app-fig img{aspect-ratio:4/3}
+    .plate-fig img{aspect-ratio:3/2}
     .svc-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
   }
@@ -208,6 +215,7 @@
     .head-cta span{display:none}
     .head-cta{padding:11px 13px}
     .foot-grid{grid-template-columns:1fr}
+    .plate-fig img{aspect-ratio:4/3}
     .hero-actions .btn,.quote-actions .btn{width:100%}
     .hero-actions,.quote-actions{flex-direction:column;align-items:stretch}
   }
@@ -284,6 +292,16 @@
         </article>
       </div>
     </div>
+  </section>
+
+  <!-- ============ PLATE ============ -->
+  <section class="plate wrap">
+    <figure class="plate-fig rv">
+      <img src="assets/work-terrace-planting.jpg"
+           alt="A newly planted terrace bed with drip irrigation, flowering ground cover and a dry-stone retaining wall, looking out over the hills"
+           width="1206" height="852" loading="lazy">
+      <figcaption><span>New terrace bed, planted and irrigated</span><span>Eastern Algarve</span></figcaption>
+    </figure>
   </section>
 
   <!-- ============ APPROACH ============ -->
