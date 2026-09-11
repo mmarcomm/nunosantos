@@ -61,7 +61,6 @@
     --line:#dee1da;
     --paper:#fbfbf8;
     --paper-2:#f3f5f0;
-    --hero-bg:#eef1e8;
     --head-bg:#fdfdfd;
     --select:#d0ddd4;
     --white:#ffffff;
@@ -126,23 +125,44 @@
   .logo img{height:38px;width:auto}
   .head-cta{padding:11px 18px;font-size:13px}
 
-  /* Hero */
-  .hero{background:var(--hero-bg);padding-block:clamp(28px,3.5vw,44px) var(--sec)}
-  /* The photo leads the page. Held to the grid, not full bleed: the
-     source is 787px wide and goes soft stretched across a viewport. */
-  .lead-fig{position:relative;overflow:hidden;margin:0}
-  .lead-fig img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 45%}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4.5vw,64px);
-    align-items:end;margin-top:clamp(30px,4vw,48px)}
-  .hero h1{margin-top:18px;max-width:15ch}
-  .hero .lead{margin-top:0}
+  /* Hero — the photo fills the whole block; everything sits on top of it.
+     Eyebrow and credit pinned to the top, headline and text anchored to
+     the bottom, so the picture keeps the upper two thirds to itself. */
+  .hero{
+    position:relative;isolation:isolate;color:#fff;display:flex;
+    min-height:86vh;min-height:86svh;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;object-position:center 54%;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(to top,
+      rgba(18,26,20,.90) 0%, rgba(18,26,20,.70) 30%,
+      rgba(18,26,20,.42) 62%, rgba(18,26,20,.74) 100%);
+  }
+  .hero-inner{
+    width:100%;display:flex;flex-direction:column;justify-content:space-between;
+    padding-block:clamp(26px,3.4vw,40px) clamp(40px,5.5vw,72px);
+  }
+  .hero-top{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+  .hero-top .label{flex:1;color:rgba(255,255,255,.92)}
+  .hero-top .label::after{background:rgba(255,255,255,.38)}
+  .hero-credit{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.86);white-space:nowrap}
+  .hero-bottom{display:grid;grid-template-columns:1.12fr .88fr;
+    gap:clamp(28px,5vw,72px);align-items:end;padding-top:clamp(56px,9vw,120px)}
+  .hero h1{color:#fff;font-size:clamp(38px,6.4vw,76px);line-height:1.0;letter-spacing:-0.025em}
+  .hero-side{border-top:1px solid rgba(255,255,255,.42);padding-top:22px}
+  .hero .lead{color:rgba(255,255,255,.9);max-width:42ch;margin:0}
   .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-  .hero-meta{margin-top:18px;font-size:13px;color:var(--ink-60)}
+  .hero-meta{margin-top:18px;font-size:13px;color:rgba(255,255,255,.74)}
   /* Photo captions sit inside the image, over a scrim so they stay
      legible whatever the photo behind them is doing. */
-  .app-fig,.plate-fig,.lead-fig{position:relative;overflow:hidden}
+  .app-fig,.plate-fig{position:relative;overflow:hidden}
   .app-fig img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .app-fig figcaption,.plate-fig figcaption,.lead-fig figcaption{
+  .app-fig figcaption,.plate-fig figcaption{
     position:absolute;left:0;right:0;bottom:0;
     display:flex;justify-content:space-between;gap:14px;
     padding:40px 16px 14px;
@@ -208,10 +228,12 @@
 
   /* Responsive */
   @media (max-width:900px){
-    .hero-grid,.app-grid,.quote-in{grid-template-columns:1fr}
+    .hero-bottom,.app-grid,.quote-in{grid-template-columns:1fr}
+    .hero{min-height:80vh;min-height:80svh}
+    .hero-bottom{gap:24px;padding-top:clamp(40px,14vw,90px)}
+    .hero-credit{display:none}
     .app-fig{order:-1}
     .app-fig img{aspect-ratio:4/3}
-    .lead-fig img{aspect-ratio:3/2}
     .plate-fig img{aspect-ratio:3/2}
     .svc-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
@@ -248,29 +270,28 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-   <div class="wrap">
-    <figure class="lead-fig rv">
-      <img src="assets/work-tavira-carob.jpg"
-           alt="A mature carob tree above a new gravel bed planted with ornamental grasses, in a garden near Tavira"
-           width="787" height="1400" fetchpriority="high">
-      <figcaption><span>Carob cleared and underplanted</span><span>Tavira</span></figcaption>
-    </figure>
+    <img class="hero-bg"
+         src="assets/hero-carob.jpg"
+         alt="A mature carob tree above a new gravel bed planted with ornamental grasses, in a garden near Tavira"
+         width="1200" height="939" fetchpriority="high">
+   <div class="hero-inner wrap">
+    <div class="hero-top">
+      <p class="label">Tavira · eastern Algarve</p>
+      <p class="hero-credit">Carob cleared and underplanted</p>
+    </div>
 
-    <div class="hero-grid rv">
-      <div>
-        <p class="label">Tavira · eastern Algarve</p>
-        <h1>We look after gardens in the eastern Algarve.</h1>
-      </div>
+    <div class="hero-bottom">
+      <h1>We look after<br>gardens in the<br>eastern Algarve.</h1>
       <div class="hero-side">
         <p class="lead">Pruning, planting, clearing and regular maintenance, from Vila Real de Santo António to Faro. Many of the gardens we look after belong to people who aren't here all year — we keep things in shape until they're back.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary"
+          <a class="btn btn-light"
              href="https://wa.me/351938586285?text=Hello%20Nuno%2C%20I%27d%20like%20a%20quote%20for%20my%20garden.%0A%0ALocation%3A%20%0AApproximate%20size%3A%20%0AWhat%20I%20need%3A%20"
              target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.533 5.851L.057 23.885a.5.5 0 0 0 .606.606l6.104-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.034-1.376l-.36-.214-3.733.896.928-3.654-.235-.376A9.865 9.865 0 0 1 2.1 12C2.1 6.525 6.525 2.1 12 2.1S21.9 6.525 21.9 12 17.475 21.9 12 21.9z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
             Ask for a quote
           </a>
-          <a class="btn btn-outline" href="#quote">How it works</a>
+          <a class="btn btn-ghost-light" href="#quote">How it works</a>
         </div>
         <p class="hero-meta">Português &amp; English · +351 938 586 285</p>
       </div>
